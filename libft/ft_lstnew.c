@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/03/31 17:35:59 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/03/16 17:26:42 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-void    sa(int *tab, int size)
+t_list	*ft_lstnew(void *content)
 {
-	int tmp;
+	t_list	*ln;
 
-	if (!tab || size < 2)
-		return ;
-	else
-	{
-		tmp = tab[0];
-		tab[0] = tab[1];
-		tab[1] = tmp;
-	}
+	ln = malloc(sizeof(t_list));
+	if (!ln)
+		return (NULL);
+	ln->content = content;
+	ln->next = NULL;
+	return (ln);
 }
+/*
+#include <stdio.h>
+
+int	main()
+{
+	t_list *socrate;
+
+	socrate = ft_lstnew((int *)5);
+	printf("\n%d\n", socrate->content);
+	free(socrate);
+	return (0);
+}
+*/

@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/03/31 17:35:59 by tda-silv         ###   ########.fr       */
+/*   Created: 2021/12/01 11:15:35 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/03/16 12:40:36 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-
-typedef struct s_data
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	*stack_a;
-	int	size_a;
-	int	*stack_b;
-	int	size_b;
-}	t_data;
+	void	*tab;
 
-void    sa(t_data d);
-void    sb(t_data d);
-void    ss(t_data d);
-size_t	ft_strlen(const char *s);
-int		ft_atoi(const char *nptr);
+	tab = malloc(nmemb * size);
+	if (!tab)
+		return (NULL);
+	ft_bzero(tab, nmemb * size);
+	return (tab);
+}
+/*
+#include <stdio.h>
 
-#endif
+int	main(void)
+{
+	int	tab;
+
+	tab = *(int *)ft_calloc(1, sizeof(int));
+	printf("\n%d\n\n", tab);
+	return (0);
+}
+*/

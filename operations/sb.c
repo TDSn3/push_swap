@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,42 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
-int main(int argc, char *argv[])
+void    sb(t_data d)
 {
-	t_data d;
+	int tmp;
 
-	d.stack_a = malloc(sizeof(int) * argc - 1);
-	if (!d.stack_a)
-		return (0);
-	d.stack_b = malloc(sizeof(int) * argc - 1);
-	if (!d.stack_b)
-		return (0);
-	d.size_a = argc - 1;
-	d.size_b = 0;
-
-	for (int i = 1; i < argc; i++)
+	if (!d.stack_b || d.size_b < 2)
+		return ;
+	else
 	{
-		d.stack_a[i - 1] = ft_atoi(argv[i]);
+		tmp = d.stack_b[0];
+		d.stack_b[0] = d.stack_b[1];
+		d.stack_b[1] = tmp;
 	}
-
-
-	for (int i = 1; i < argc; i++)
-	{
-		printf("%d\n", d.stack_a[i - 1]);
-	}
-	printf("\n- -\na b\n\n");
-
-	ss(d);
-
-	for (int i = 1; i < argc; i++)
-	{
-		printf("%d\n", d.stack_a[i - 1]);
-	}
-	printf("\n- -\na b\n\n");
-
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,42 +10,53 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
-int main(int argc, char *argv[])
+void    pa(t_data d)
 {
-	t_data d;
+	int tmp;
+	int tmp_two;
+	int i;
 
-	d.stack_a = malloc(sizeof(int) * argc - 1);
-	if (!d.stack_a)
-		return (0);
-	d.stack_b = malloc(sizeof(int) * argc - 1);
-	if (!d.stack_b)
-		return (0);
-	d.size_a = argc - 1;
-	d.size_b = 0;
-
-	for (int i = 1; i < argc; i++)
+	i = 1;
+	if (!d.stack_b || d.size_b < 1)
+		return ;
+	else
 	{
-		d.stack_a[i - 1] = ft_atoi(argv[i]);
+		tmp = d.stack_a[0];
+		d.stack_a[0] = d.stack_b[0];
+		while (i < d.size_a)
+		{
+			if (i == 1)
+			{
+				tmp_two = d.stack_a[i];
+				d.stack_a[i] = tmp;
+			}
+			else
+			{
+				tmp = d.stack_a[i];
+				d.stack_a[i] = tmp_two;
+				tmp_two = tmp;
+			}
+			i++;
+		}
+		i = 0;
+		tmp = d.stack_b[0];
+		while (i < d.size_b)
+		{
+			if (i == 0)
+			{
+				tmp_two = d.stack_b[i];
+				d.stack_a[i] = tmp;
+			}
+			else
+			{
+				tmp = d.stack_a[i];
+				d.stack_a[i] = tmp_two;
+				tmp_two = tmp;
+			}
+			i++;
+		}
+
 	}
-
-
-	for (int i = 1; i < argc; i++)
-	{
-		printf("%d\n", d.stack_a[i - 1]);
-	}
-	printf("\n- -\na b\n\n");
-
-	ss(d);
-
-	for (int i = 1; i < argc; i++)
-	{
-		printf("%d\n", d.stack_a[i - 1]);
-	}
-	printf("\n- -\na b\n\n");
-
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
 }

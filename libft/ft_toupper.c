@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 15:48:32 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/03/19 18:44:34 by tda-silv         ###   ########.fr       */
+/*   Created: 2021/11/29 09:41:44 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/03/16 12:35:56 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-
-size_t	ft_strlen(const char *s)
+int	ft_toupper(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
+	else
+		return (c);
 }
+/*
+#include <ctype.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	char	tab[] = "super";
+	
+	tab[2] = ft_toupper(tab[2]);
+	printf("\n%d | %d | %s\n\n", tab[2], toupper(tab[2]), tab);
+	printf("\n%d | %d | %s\n\n", tab[2], ft_toupper(tab[2]), tab);
+	return (0);
+}
+*/

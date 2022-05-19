@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/03/31 17:35:59 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/19 11:52:44 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/03/21 10:42:04 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-
-typedef struct s_data
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	*stack_a;
-	int	size_a;
-	int	*stack_b;
-	int	size_b;
-}	t_data;
+	while (lst && f)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
+}
+/*
+#include <stdio.h>
 
-void    sa(t_data d);
-void    sb(t_data d);
-void    ss(t_data d);
-size_t	ft_strlen(const char *s);
-int		ft_atoi(const char *nptr);
+void	f(void *lst)
+{
+	printf("\n%d\n", lst);	
+}
 
-#endif
+int	main()
+{
+	t_list	*a;
+
+	a = ft_lstnew((int *)5);
+	ft_lstiter(a, f);
+	printf("\n%d\n", a->content);
+	return (0);
+}
+*/

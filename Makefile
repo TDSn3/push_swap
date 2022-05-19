@@ -17,9 +17,11 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 
 SRC = ./push_swap.c \
-	  ./sa.c \
-	  ./ft_strlen.c \
-	  ./ft_atoi.c \
+	  ./operations/sa.c \
+	  ./operations/sb.c \
+	  ./operations/ss.c \
+	  ./libft/ft_strlen.c \
+	  ./libft/ft_atoi.c \
 
 all: $(NAME)
 

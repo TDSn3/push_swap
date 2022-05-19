@@ -35,3 +35,18 @@ int	ft_atoi(const char *nptr)
 	}
 	return (final_nb = nb * if_is_negative);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(int argc, char **argv)
+{
+//	char	tab1[] = "-102";
+	int		t1 = atoi(argv[1]);
+	int		t2 = ft_atoi(argv[1]);
+
+	(void)argc;
+	printf("\n%s : %d | %d\n\n", argv[1], t1, t2);
+	return (0);
+}
+*/
