@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   setup_struct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 11:15:50 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/05/21 11:15:52 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/05/21 12:36:44 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "header.h"
 
-void    rb(t_data *d)
+int setup_struct(t_data *d, int argc, char **argv)
 {
-	int	stock_first;
-	int i;
-	
-	if (!d->stack_b || d->size_b < 2)
-		return ;
-	stock_first = d->stack_b[0];
-	i = 0;
-	while (i < d->size_b)
+	int	i;
+
+	i = 1;
+	d->stack_a = malloc(sizeof(int) * argc - 1);
+	if (!d->stack_a)
 	{
-		if (i == d->size_b - 1)
-			d->stack_b[i] = stock_first;
-		else
-			d->stack_b[i] = d->stack_b[i + 1];
+		write(2, "Error\n", 6);
+		return (1);
+	}
+	d->stack_b = malloc(sizeof(int) * argc - 1);
+	if (!d->stack_b)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
+	d->size_a = argc - 1;
+	d->size_b = 0;
+	while (i < argc)
+	{
+		d->stack_a[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
+	return (0);
 }

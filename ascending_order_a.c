@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   ascending_order_a.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/03/31 17:35:59 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/21 13:15:25 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/05/21 13:21:56 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "header.h"
 
-void    sb(t_data *d)
+int ascending_order_a(t_data d)
 {
-	int tmp;
+	int	i;
 
-	if (!d->stack_b || d->size_b < 2)
-		return ;
-	else
+	i = 0;
+	if (!d.stack_a || d.size_a < 2)
+		return (0);
+	while (i < d.size_a - 1)
 	{
-		tmp = d->stack_b[0];
-		d->stack_b[0] = d->stack_b[1];
-		d->stack_b[1] = tmp;
+		if (d.stack_a[i] > d.stack_a[i + 1])
+			return (i);
+		i++;
 	}
+	return (0);
 }

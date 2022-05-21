@@ -17,9 +17,20 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 
 SRC = ./push_swap.c \
+	  ./setup_struct.c \
+	  ./ascending_order_a.c \
+	  ./find_max_a.c \
 	  ./operations/sa.c \
 	  ./operations/sb.c \
 	  ./operations/ss.c \
+	  ./operations/pa.c \
+	  ./operations/pb.c \
+	  ./operations/ra.c \
+	  ./operations/rb.c \
+	  ./operations/rr.c \
+	  ./operations/rra.c \
+	  ./operations/rrb.c \
+	  ./operations/rrr.c \
 	  ./libft/ft_strlen.c \
 	  ./libft/ft_atoi.c \
 

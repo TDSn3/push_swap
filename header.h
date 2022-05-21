@@ -27,9 +27,20 @@ typedef struct s_data
 	int	size_b;
 }	t_data;
 
-void    sa(t_data d);
-void    sb(t_data d);
-void    ss(t_data d);
+void    sa(t_data *d);
+void    sb(t_data *d);
+void    ss(t_data **d);
+void    pa(t_data *d);
+void    pb(t_data *d);
+void    ra(t_data *d);
+void    rb(t_data *d);
+void    rr(t_data **d);
+void    rra(t_data *d);
+void    rrb(t_data *d);
+void    rrr(t_data **d);
+int		setup_struct(t_data *d, int argc, char **argv);
+int		ascending_order_a(t_data d);
+int		find_max_a(t_data d);
 size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *nptr);
 

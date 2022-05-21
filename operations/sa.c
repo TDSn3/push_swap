@@ -12,16 +12,16 @@
 
 #include "../header.h"
 
-void    sa(t_data d)
+void    sa(t_data *d)
 {
 	int tmp;
 
-	if (!d.stack_a || d.size_a < 2)
+	if (!d->stack_a || d->size_a < 2)
 		return ;
 	else
 	{
-		tmp = d.stack_a[0];
-		d.stack_a[0] = d.stack_a[1];
-		d.stack_a[1] = tmp;
+		tmp = d->stack_a[0];
+		d->stack_a[0] = d->stack_a[1];
+		d->stack_a[1] = tmp;
 	}
 }

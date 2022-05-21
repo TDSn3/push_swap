@@ -12,8 +12,8 @@
 
 #include "../header.h"
 
-void    ss(t_data d)
+void    ss(t_data **d)
 {
-    sa(d);
-    sb(d);
+    sa(*d);
+    sb(*d);
 }
