@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ascending_order_a.c                                :+:      :+:    :+:   */
+/*   ft_lst_tab_new.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 13:15:25 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/05/21 13:21:56 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/05/22 15:45:58 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int ascending_order_a(t_data d)
+t_tab	*ft_lst_tab_new(int *content)
 {
-	int	i;
+	t_tab	*ln;
 
-	i = 0;
-	if (!d.stack_a || d.size_a < 2)
-		return (-1);
-	while (i < d.size_a - 1)
-	{
-		if (d.stack_a[i] > d.stack_a[i + 1])
-			return (i);
-		i++;
-	}
-	return (-1);
+	ln = malloc(sizeof(t_tab));
+	if (!ln)
+		return (NULL);
+	ln->content = content;
+	ln->next = NULL;
+	return (ln);
 }

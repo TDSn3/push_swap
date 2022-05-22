@@ -19,6 +19,7 @@ NAME = push_swap
 SRC = ./push_swap.c \
 	  ./setup_struct.c \
 	  ./ascending_order_a.c \
+	  ./ascending_order_b.c \
 	  ./find_max_a.c \
 	  ./operations/sa.c \
 	  ./operations/sb.c \
@@ -33,6 +34,11 @@ SRC = ./push_swap.c \
 	  ./operations/rrr.c \
 	  ./libft/ft_strlen.c \
 	  ./libft/ft_atoi.c \
+	  ./ft_lst_tab_new.c \
+	  ./ft_lst_tab_last.c \
+	  ./ft_lst_tab_add_back.c \
+	  ./ft_lst_tab_size.c \
+	  ./ft_lst_tab_clear.c \
 
 all: $(NAME)
 
@@ -42,7 +48,7 @@ $(NAME): $(SRC)
 #clean:
 #	rm -f $(OBJ)
 
-fclean: clean
+fclean: #clean
 	rm -f $(NAME)
 
 re: fclean all

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ascending_order_a.c                                :+:      :+:    :+:   */
+/*   ft_lst_tab_last.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 13:15:25 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/05/21 13:21:56 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 14:52:12 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/05/22 15:59:23 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int ascending_order_a(t_data d)
+t_tab	*ft_lst_tab_last(t_tab *lst)
 {
-	int	i;
-
-	i = 0;
-	if (!d.stack_a || d.size_a < 2)
-		return (-1);
-	while (i < d.size_a - 1)
-	{
-		if (d.stack_a[i] > d.stack_a[i + 1])
-			return (i);
-		i++;
-	}
-	return (-1);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup_struct.c                                     :+:      :+:    :+:   */
+/*   ft_lst_tab_size.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/05/21 12:36:44 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 13:59:36 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/03/16 17:12:28 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int setup_struct(t_data *d, int argc, char **argv)
+int	ft_lst_tab_size(t_tab *lst)
 {
-	int	i;
+	t_tab	*nextl;
+	size_t	i;
 
-	i = 1;
-	d->stack_a = malloc(sizeof(int) * argc - 1);
-	if (!d->stack_a)
+	i = 0;
+	nextl = lst;
+	while (nextl)
 	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	d->stack_b = malloc(sizeof(int) * argc - 1);
-	if (!d->stack_b)
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	d->size_a = argc - 1;
-	d->size_b = 0;
-	while (i < argc)
-	{
-		d->stack_a[i - 1] = ft_atoi(argv[i]);
+		nextl = nextl->next;
 		i++;
 	}
-	d->lst_copy_stack = NULL;
-	return (0);
+	return (i);
 }
