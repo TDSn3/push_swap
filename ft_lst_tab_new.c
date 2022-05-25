@@ -12,13 +12,14 @@
 
 #include "header.h"
 
-t_tab	*ft_lst_tab_new(int *content)
+t_tab	*ft_lst_tab_new(int *content, int pos)
 {
 	t_tab	*ln;
 
 	ln = malloc(sizeof(t_tab));
 	if (!ln)
 		return (NULL);
+	ln->pos = pos;
 	ln->content = content;
 	ln->next = NULL;
 	return (ln);

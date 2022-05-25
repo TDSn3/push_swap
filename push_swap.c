@@ -12,12 +12,14 @@
 
 #include "header.h"
 void	show_stacks(t_data d, int argc);
-void	recursive_test(t_data *d, int next_operation, int *tab, int i, int prev_operation);
+void	recursive_test(t_data *d, int next_operation, int *tab, int i, int prev_operation, int nb_rotate);
 int		copy_stack_a_struct(t_data *d);
 int		comp_stack_a(t_data d);
 void	reset_satck_a(t_data *d);
 int		*dup_stack_a(t_data d);
-
+int		comp_stack_a_lst(t_data d);
+void 	miniclean_lst(t_data *d, int pos);
+void 	change_stack_a(t_data *d, int *save);
 
 int main(int argc, char *argv[])
 {
@@ -32,7 +34,8 @@ int main(int argc, char *argv[])
 
 	copy_stack_a_struct(&d);
 	d.recu_on = 1;
-	recursive_test(&d, 2, d.copy_stack_a, 0, 0);
+	recursive_test(&d, 1, d.copy_stack_a, 0, 0, 0);
+
 
 	if (d.lst_copy_stack)
 		ft_lst_tab_clear(&d.lst_copy_stack);
@@ -43,8 +46,10 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-void	recursive_test(t_data *d, int next_operation, int *tab, int i, int prev_operation)
-{
+void	recursive_test(t_data *d, int next_operation, int *tab, int i, int prev_operation, int nb_rotate)
+{	
+	int *save;
+
 	if (d->recu_on == 0 && i > d->stock_recu_i - 1) // stop si le nombre d'opération effectué dépasse un nombre de suite déjà effectué ayant reussi à trier.
 	{
 		printf(" \033[35m{LOST_(%d)-%d.%d}\033[00m ", i, prev_operation, next_operation);
@@ -53,14 +58,16 @@ void	recursive_test(t_data *d, int next_operation, int *tab, int i, int prev_ope
 		else if (prev_operation == 2)
 			rra(d);
 		else if (prev_operation == 4)
-			ra(d);	
+			ra(d);
+		miniclean_lst(d, i);
 		return;
 	}
 	i++; // compte le nombre d'opération
-
-	printf("(%d)", i);
+	printf("\n(%d \033[2;3m%d\033[00m)", i, prev_operation);
 	if (ascending_order_a(*d) == -1 && d->size_b == 0) // stop si la stack est trié
 	{
+		printf(" ");
+		show_stacks(*d, 6);
 		if (prev_operation == 1)
 			sa(d);
 		else if (prev_operation == 2)
@@ -70,51 +77,92 @@ void	recursive_test(t_data *d, int next_operation, int *tab, int i, int prev_ope
 		printf(" \033[33;01m[SORTED in %d]\033[00m ", i - 1);
 		d->stock_recu_i = i;
 		d->recu_on = 0;
+		miniclean_lst(d, i);
 		return ;
 	}
 	if (next_operation == 1) // SA
 	{
 		printf("+1 ");
+		printf(" ");
+		show_stacks(*d, 6);
+		printf(" -> ");
 		sa(d);
-		ft_lst_tab_add_back(&d->lst_copy_stack, ft_lst_tab_new(dup_stack_a(*d)));
-		if (!ft_lst_tab_last(d->lst_copy_stack))
-			exit ( 1 );
-		if (comp_stack_a(*d))
+		if (comp_stack_a(*d) || comp_stack_a_lst(*d))
 		{
 			sa(d);
 			printf(" \033[31m{BAD_WAY}\033[00m "); // ROUGE
+			miniclean_lst(d, i);
 			return ;	
 		}
-		recursive_test(d, 2, tab, i, 1);
-		recursive_test(d, 4, tab, i, 1);
+		ft_lst_tab_add_back(&d->lst_copy_stack, ft_lst_tab_new(dup_stack_a(*d), i));
+		if (!ft_lst_tab_last(d->lst_copy_stack))
+			exit ( 1 );
+		printf(" ");
+		show_stacks(*d, 6);
+		save = dup_stack_a(*d);
+		recursive_test(d, 2, tab, i, 1, nb_rotate);
+		if (d->recu_on == 0 && i + 1 > d->stock_recu_i)
+			return ;
+		change_stack_a(d, save);
+		recursive_test(d, 4, tab, i, 1, nb_rotate);
 	}
 	if (next_operation == 2) // RA
 	{
 		printf("+2 ");
+		printf(" ");
+		show_stacks(*d, 6);
+		printf(" -> ");
 		ra(d);
-		if (comp_stack_a(*d))
+		if (prev_operation == 2)
+			nb_rotate++;
+		else
+			nb_rotate = 0;
+		if (comp_stack_a(*d) || comp_stack_a_lst(*d) || nb_rotate == d->size_a)
 		{
 			rra(d);
 			printf(" \033[36m{BAD_WAY}\033[00m "); // CYAN
+			miniclean_lst(d, i);
 			return ;	
 		}
-		recursive_test(d, 2, tab, i, 2);
-		if (prev_operation != 1)
-			recursive_test(d, 1, tab, i, 2);
+		printf(" ");
+		show_stacks(*d, 6);
+		save = dup_stack_a(*d);
+		if (d->recu_on == 0 && i + 1 > d->stock_recu_i)
+			return ;
+		recursive_test(d, 2, tab, i, 2, nb_rotate);
+		if (d->recu_on == 0 && i + 1 > d->stock_recu_i)
+			return ;
+		change_stack_a(d, save);
+		recursive_test(d, 1, tab, i, 2, nb_rotate);
 	}
 	if (next_operation == 4) // RRA
 	{
 		printf("+4 ");
+		printf(" ");
+		show_stacks(*d, 6);
+		printf(" -> ");
 		rra(d);	
-		if (comp_stack_a(*d))
+		if (prev_operation == 4)
+			nb_rotate++;
+		else
+			nb_rotate = 0;
+		if (comp_stack_a(*d) || comp_stack_a_lst(*d) || nb_rotate == d->size_a)
 		{
 			ra(d);
 			printf(" \033[34m{BAD_WAY}\033[00m "); // BLEU
+			miniclean_lst(d, i);
 			return ;	
 		}
-		recursive_test(d, 4, tab, i, 4);
-		if (prev_operation != 1)
-			recursive_test(d, 1, tab, i, 4);
+		printf(" ");
+		show_stacks(*d, 6);
+		save = dup_stack_a(*d);
+		if (d->recu_on == 0 && i + 1 > d->stock_recu_i)
+			return ;
+		recursive_test(d, 4, tab, i, 4, nb_rotate);
+		if (d->recu_on == 0 && i + 1 > d->stock_recu_i)
+			return ;
+		change_stack_a(d, save);
+		recursive_test(d, 1, tab, i, 4, nb_rotate);
 	}
 }
 
@@ -169,20 +217,33 @@ int	comp_stack_a(t_data d)
 	return (1);
 }
 
-// LA SUITE 
-
-int	comp_stack_a_lss(t_data d)
+int	comp_stack_a_lst(t_data d)
 {
+	t_tab	*nextl;
 	int	i;
+	int j;
 
 	i = 0;
-	while (i < ft_lst_tab_size(&d.lst_copy_stack))
+	j = 0;
+	nextl = d.lst_copy_stack;
+	while (nextl)
 	{
-		if (d.stack_a[i] != d.copy_stack_a[i])
-			return (0);
-		i++;
+		if (nextl->content)
+		{
+			while (i < d.size_a)
+			{
+				if (d.stack_a[i] == nextl->content[i])
+					j++;
+				i++;
+			}
+			if (j == d.size_a)
+			return (1);
+			i = 0;
+			j = 0;
+		}
+		nextl = nextl->next;
 	}
-	return (1);
+	return (0);
 }
 
 int	*dup_stack_a(t_data d)
@@ -231,8 +292,36 @@ void	show_stacks(t_data d, int argc)
 			printf(" ");
 		if (i - 1 < d.size_b)
 			printf(" %d", d.stack_b[i - 1]);
-		if (i - 1 < d.size_a || i - 1 < d.size_b)
-			printf("\n");
+//		if (i - 1 < d.size_a || i - 1 < d.size_b)
+//			printf("\n");
 	}
-	printf("- -\na b\n\n");	
+//	printf("- -\na b\n\n");	
+}
+
+void 	miniclean_lst(t_data *d, int pos)
+{
+	t_tab	*nextl;
+
+	nextl = d->lst_copy_stack;
+	while (nextl)
+	{
+		if (nextl->pos > pos)
+		{
+			free(nextl->content);
+			nextl->content = NULL;
+		}
+		nextl = nextl->next;
+	}
+}
+
+void 	change_stack_a(t_data *d, int *save)
+{
+	int	i;
+
+	i = 0;
+	while (i < d->size_a)
+	{
+		d->stack_a[i] = save[i];
+		i++;
+	}	
 }

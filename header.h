@@ -23,6 +23,7 @@
 typedef struct s_tab
 {
 	int				*content;
+	int				pos;
 	struct s_tab	*next;
 }	t_tab;
 
@@ -39,6 +40,7 @@ typedef struct s_data
 	t_tab	*lst_copy_stack;
 }	t_data;
 
+
 void    sa(t_data *d);
 void    sb(t_data *d);
 void    ss(t_data **d);
@@ -54,7 +56,7 @@ int		setup_struct(t_data *d, int argc, char **argv);
 int		ascending_order_a(t_data d);
 int		ascending_order_b(t_data d);
 int		find_max_a(t_data d);
-t_tab	*ft_lst_tab_new(int *content);
+t_tab	*ft_lst_tab_new(int *content, int pos);
 t_tab	*ft_lst_tab_last(t_tab *lst);
 void	ft_lst_tab_add_back(t_tab **lst, t_tab *new);
 int		ft_lst_tab_size(t_tab *lst);
