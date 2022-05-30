@@ -20,6 +20,24 @@
 # include <fcntl.h>
 # include "./libft/libft.h"
 
+typedef struct s_sub_lst
+{
+	struct s_sub_lst	*prev;
+	struct s_sub_lst	*next;
+	int					oper_used;
+	int					*stack_after_oper;
+	struct s_sub_lst	*prev_oper;
+	struct s_sub_lst	*next_oper;
+}	t_sub_lst;
+
+typedef	struct s_double_lst
+{
+	struct s_double_lst	*prev;
+	struct s_double_lst	*next;
+	t_sub_lst			*sub_lst;
+}	t_double_lst;
+
+
 typedef struct s_tab
 {
 	int				*content;
@@ -38,6 +56,7 @@ typedef struct s_data
 	int		recu_on;
 	int		stock_recu_i;
 	t_tab	*lst_copy_stack;
+	t_sub_lst	*find;
 }	t_data;
 
 
@@ -61,5 +80,25 @@ t_tab	*ft_lst_tab_last(t_tab *lst);
 void	ft_lst_tab_add_back(t_tab **lst, t_tab *new);
 int		ft_lst_tab_size(t_tab *lst);
 void	ft_lst_tab_clear(t_tab **lst);
+int		*dup_tab(int *tab, int size);
+
+t_double_lst	*dl_new();
+t_sub_lst		*sl_new(int oper_used, int *stack_after_oper);
+t_double_lst	*dl_last(t_double_lst *dl);
+t_sub_lst		*sl_last(t_sub_lst *sl);
+void			dl_add_back(t_double_lst **dl, t_double_lst *new_dl);
+void			sl_add_back(t_sub_lst **sl, t_sub_lst *new_sl);
+void			sl_link(t_sub_lst *sl, t_sub_lst *sl_prev);
+
+int		*sa_ot(int *tab, int size);
+int		*ra_ot(int *tab, int size);
+int		*rra_ot(int *tab, int size);
+
+int		*sa_dt(int *tab, int size);
+int		*ra_dt(int *tab, int size);
+int		*rra_dt(int *tab, int size);
+
+void	make_all_oper(t_double_lst *dl, t_data *d, int i);
+int 	ascending_order_tab(int *tab, int size);
 
 #endif

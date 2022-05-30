@@ -20,6 +20,7 @@ int		*dup_stack_a(t_data d);
 int		comp_stack_a_lst(t_data d);
 void 	miniclean_lst(t_data *d, int pos);
 void 	change_stack_a(t_data *d, int *save);
+void	test(t_data *d);
 
 int main(int argc, char *argv[])
 {
@@ -32,19 +33,44 @@ int main(int argc, char *argv[])
 	printf("\nBiggest num in stack a is %d, [%d]\n\n", d.stack_a[find_max_a(d)], find_max_a(d));
 	show_stacks(d, argc);
 
-	copy_stack_a_struct(&d);
-	d.recu_on = 1;
-	recursive_test(&d, 1, d.copy_stack_a, 0, 0, 0);
+	test(&d);
+
+//	copy_stack_a_struct(&d);
+//	d.recu_on = 1;
+//	recursive_test(&d, 2, d.copy_stack_a, 0, 0, 0);
 
 
-	if (d.lst_copy_stack)
-		ft_lst_tab_clear(&d.lst_copy_stack);
-	free(d.copy_stack_a);
+//	if (d.lst_copy_stack)
+//		ft_lst_tab_clear(&d.lst_copy_stack);
+//	free(d.copy_stack_a);
 	free(d.stack_a);
 	free(d.stack_b);
 
 	return (0);
 }
+
+void	test(t_data *d)
+{
+	t_double_lst	*dl;
+
+	dl = dl_new();
+	sa(d);
+	dl->sub_lst = sl_new(1, dup_stack_a(*d));
+	sa(d);
+	ra(d);
+	sl_add_back(&dl->sub_lst, sl_new(2, dup_stack_a(*d)));
+	rra(d);
+	rra(d);
+	sl_add_back(&dl->sub_lst, sl_new(4, dup_stack_a(*d)));
+	ra(d);
+
+	printf("\n");
+	make_all_oper(dl, d, 1);
+	printf("\n\n");
+	for (int i = 0; i < d->size_a; i++)
+		printf("%d", d->find->stack_after_oper[i]);
+}
+
 
 void	recursive_test(t_data *d, int next_operation, int *tab, int i, int prev_operation, int nb_rotate)
 {	
