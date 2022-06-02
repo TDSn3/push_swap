@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   sa_ot.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 14:20:43 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/01 21:19:34 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../../header.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "./libft/libft.h"
-
-typedef struct s_data
+int    *sa_ot(int *tab, int size)
 {
-	int		*stack_a;
-	int		size_a;
-	int		*stack_b;
-	int		size_b;
-}	t_data;
+	int tmp;
 
-# include "./operation/operation.h"
-# include "./sort_five/sort_five.h"
+	if (!tab || size < 2)
+		return (NULL);
+	else
+	{
+		tmp = tab[0];
+		tab[0] = tab[1];
+		tab[1] = tmp;
+	}
+	return (tab);
 
-int		setup_struct(t_data *d, int argc, char **argv);
-void	show_stack(t_data d, int argc);
-
-#endif
+}

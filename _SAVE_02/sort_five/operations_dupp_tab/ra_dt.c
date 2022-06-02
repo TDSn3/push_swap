@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ra_dt.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/02 13:55:54 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/21 11:15:50 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/01 14:40:16 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-int	*dup_stack_a(t_data d);
+#include "../../header.h"
 
-int main(int argc, char *argv[])
+int    *ra_dt(int *tab, int size)
 {
-	t_data d;
-
-	if (setup_struct(&d, argc, argv))
-		return (1);
-
-	sort_five(d);
-	show_stack(d, argc);
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
-}
-
-void	test(t_data *d)
-{
-	int	i;
-
+    int	*copy;
+	int	stock_first;
+	int i;
+	
+	if (!tab || size < 2)
+		return (NULL);
+	copy = dup_tab(tab, size);
+	if (!copy)
+		return (NULL);
+	stock_first = copy[0];
 	i = 0;
-	while (d->size_a > 5)
+	while (i < size)
 	{
-		pb(&d);
+		if (i == size - 1)
+			copy[i] = stock_first;
+		else
+			copy[i] = copy[i + 1];
+		i++;
 	}
+	return (copy);
 }

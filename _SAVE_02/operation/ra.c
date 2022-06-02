@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/02 13:55:54 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/21 11:15:50 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/01 11:35:46 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-int	*dup_stack_a(t_data d);
+#include "../header.h"
 
-int main(int argc, char *argv[])
+void    ra(t_data *d)
 {
-	t_data d;
-
-	if (setup_struct(&d, argc, argv))
-		return (1);
-
-	sort_five(d);
-	show_stack(d, argc);
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
-}
-
-void	test(t_data *d)
-{
-	int	i;
-
+	int	stock_first;
+	int i;
+	
+	if (!d->stack_a || d->size_a < 2)
+		return ;
+	stock_first = d->stack_a[0];
 	i = 0;
-	while (d->size_a > 5)
+	while (i < d->size_a)
 	{
-		pb(&d);
+		if (i == d->size_a - 1)
+			d->stack_a[i] = stock_first;
+		else
+			d->stack_a[i] = d->stack_a[i + 1];
+		i++;
 	}
 }

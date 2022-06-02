@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 14:20:43 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/02 00:01:11 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "header.h"
+int	*dup_stack_a(t_data d);
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "./libft/libft.h"
-
-typedef struct s_data
+int main(int argc, char *argv[])
 {
-	int		*stack_a;
-	int		size_a;
-	int		*stack_b;
-	int		size_b;
-}	t_data;
+	t_data d;
 
-# include "./operation/operation.h"
-# include "./sort_five/sort_five.h"
+	if (setup_struct(&d, argc, argv))
+		return (1);
+	show_stack(d, argc);
+	sort_five(d);
+	show_stack(d, argc);
+	free(d.stack_a);
+	free(d.stack_b);
 
-int		setup_struct(t_data *d, int argc, char **argv);
-void	show_stack(t_data d, int argc);
-
-#endif
+	return (0);
+}

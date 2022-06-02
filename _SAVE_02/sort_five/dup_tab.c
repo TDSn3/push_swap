@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   dup_tab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/02 13:55:54 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/30 15:01:58 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/01 14:42:08 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-int	*dup_stack_a(t_data d);
+#include "../header.h"
 
-int main(int argc, char *argv[])
-{
-	t_data d;
-
-	if (setup_struct(&d, argc, argv))
-		return (1);
-
-	sort_five(d);
-	show_stack(d, argc);
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
-}
-
-void	test(t_data *d)
+int	*dup_tab(int *tab, int size)
 {
 	int	i;
+	int	*tab_copy;
 
 	i = 0;
-	while (d->size_a > 5)
+	if (size > 0 && tab)
 	{
-		pb(&d);
+		tab_copy = malloc(sizeof(int) * size);
+		if (!tab)
+		{
+			write(2, "Error\n", 6);
+			return (NULL);
+		}
+		while (i < size)
+		{
+			tab_copy[i] = tab[i];
+			i++;
+		}
+		return (tab_copy);
 	}
+	return (NULL);
 }

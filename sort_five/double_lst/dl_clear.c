@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   dl_clear.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/02 13:55:54 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/01 14:51:47 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-int	*dup_stack_a(t_data d);
+#include "../../header.h"
 
-int main(int argc, char *argv[])
+void	dl_clear(t_double_lst **dl)
 {
-	t_data d;
+	t_double_lst	*copydl;
+	t_sub_lst		*copysl;
 
-	if (setup_struct(&d, argc, argv))
-		return (1);
-
-	sort_five(d);
-	show_stack(d, argc);
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
-}
-
-void	test(t_data *d)
-{
-	int	i;
-
-	i = 0;
-	while (d->size_a > 5)
+	copydl = *dl;
+	while (copydl)
 	{
-		pb(&d);
+		*dl = copydl->next;
+		copysl = copydl->sub_lst;
+		while (copysl)
+		{
+			free(copysl->stack_after_oper);
+			copysl = copysl->next;
+		}
+		free(copydl->sub_lst);
+		free(copydl);
+		copydl = *dl;
 	}
+	*dl = NULL;
 }

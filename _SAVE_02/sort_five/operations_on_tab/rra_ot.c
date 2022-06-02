@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rra_ot.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/02 13:55:54 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/21 12:11:38 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/01 21:19:33 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-int	*dup_stack_a(t_data d);
+#include "../../header.h"
 
-int main(int argc, char *argv[])
+int    *rra_ot(int *tab, int size)
 {
-	t_data d;
-
-	if (setup_struct(&d, argc, argv))
-		return (1);
-
-	sort_five(d);
-	show_stack(d, argc);
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
-}
-
-void	test(t_data *d)
-{
-	int	i;
-
+    int tmp;
+	int tmp_two;
+	int i;
+	
+	if (!tab || size < 2)
+		return (NULL);
 	i = 0;
-	while (d->size_a > 5)
+	while (i < size)
 	{
-		pb(&d);
+		if (i == 0)
+		{
+			tmp_two = tab[i];
+			tab[i] = tab[size - 1];
+		}
+        else
+        {
+            tmp = tab[i];
+            tab[i] = tmp_two;
+            tmp_two = tmp;
+        }
+		i++;
 	}
+	return (tab);
 }

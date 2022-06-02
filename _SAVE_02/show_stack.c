@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   show_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/02 13:55:54 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/01 11:29:53 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/01 11:59:11 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-int	*dup_stack_a(t_data d);
 
-int main(int argc, char *argv[])
-{
-	t_data d;
-
-	if (setup_struct(&d, argc, argv))
-		return (1);
-
-	sort_five(d);
-	show_stack(d, argc);
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
-}
-
-void	test(t_data *d)
+void	show_stack(t_data d, int argc)
 {
 	int	i;
-
-	i = 0;
-	while (d->size_a > 5)
+	
+	i = 1;
+	while (i < argc)
 	{
-		pb(&d);
+		if (i - 1 < d.size_a)
+			printf("%d", d.stack_a[i - 1]);
+		else if (i - 1 < d.size_b)
+			printf(" ");
+		if (i - 1 < d.size_b)
+			printf(" %d", d.stack_b[i - 1]);
+		if (i - 1 < d.size_a || i - 1 < d.size_b)
+			printf("\n");
+		i++;
 	}
+	printf("- -\na b\n");	
 }

@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ascending_order_tab.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/02 13:55:54 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/21 13:15:25 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/01 23:11:10 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-int	*dup_stack_a(t_data d);
+#include "../header.h"
 
-int main(int argc, char *argv[])
-{
-	t_data d;
-
-	if (setup_struct(&d, argc, argv))
-		return (1);
-
-	sort_five(d);
-	show_stack(d, argc);
-	free(d.stack_a);
-	free(d.stack_b);
-	return (0);
-}
-
-void	test(t_data *d)
+int ascending_order_tab(int *tab, int size)
 {
 	int	i;
 
 	i = 0;
-	while (d->size_a > 5)
+	if (!tab || size < 2)
+		return (-1);
+	while (i < size - 1)
 	{
-		pb(&d);
+		if (tab[i] > tab[i + 1])
+			return (i);
+		i++;
 	}
+	return (-1);
 }

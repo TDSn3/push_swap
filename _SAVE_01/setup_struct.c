@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setup_struct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 14:01:02 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/05/21 12:36:44 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int setup_struct(t_data *d, int argc, char **argv)
 		d->stack_a[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
+	d->lst_copy_stack = NULL;
 	return (0);
 }
