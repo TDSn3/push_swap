@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 23:47:11 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:05:05 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_sub_lst
 	struct s_sub_lst	*prev;
 	struct s_sub_lst	*next;
 	int					oper_used;
+	int					nb_rra;
 	int					*stack_after_oper;
 	struct s_sub_lst	*prev_oper;
 	struct s_sub_lst	*next_oper;
@@ -36,11 +37,12 @@ void			sort_five(t_data d);
 int				if_sorted(t_data *d, t_sub_lst *copy_sl);
 void			make_all_oper(t_double_lst *dl, t_data *d, int i);
 int				ascending_order_tab(int *tab, int size);
+int				descending_order_tab(int *tab, int size);
 int				*dup_tab(int *tab, int size);
 
 
 t_double_lst	*dl_new();
-t_sub_lst		*sl_new(int oper_used, int *stack_after_oper);
+t_sub_lst		*sl_new(int oper_used, int *stack_after_oper, int nb_rra);
 t_double_lst	*dl_last(t_double_lst *dl);
 t_sub_lst		*sl_last(t_sub_lst *sl);
 void			dl_add_back(t_double_lst **dl, t_double_lst *new_dl);
@@ -56,5 +58,9 @@ int				*rra_dt(int *tab, int size);
 int				*sa_ot(int *tab, int size);
 int				*ra_ot(int *tab, int size);
 int				*rra_ot(int *tab, int size);
+
+int				if_sorted_b(t_data *d, t_sub_lst *copy_sl);
+void			make_all_oper_b(t_double_lst *dl, t_data *d);
+void			sort_first_five_b(t_data d);
 
 #endif

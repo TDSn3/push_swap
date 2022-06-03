@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   if_sorted.c                                        :+:      :+:    :+:   */
+/*   if_sorted_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:19:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/03 17:05:40 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:09:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "../../header.h"
 
-int	if_sorted(t_data *d, t_sub_lst *copy_sl)
+int	if_sorted_b(t_data *d, t_sub_lst *copy_sl)
 {
 	int			nb_oper;
 	t_sub_lst	*cpy;
 	t_sub_lst	*lst_oper;
 	t_sub_lst	*cpy_lo;
+	int			descending_order_size;
+
+	if (d->size_b >= 5)
+		descending_order_size = 5;
+	else
+		descending_order_size = d->size_b;
 
 	nb_oper = 0;
 	cpy = copy_sl;
 	lst_oper = sl_new(0, NULL, 0);
-	if (ascending_order_tab(copy_sl->stack_after_oper, d->size_a) == -1)
+	if (descending_order_tab(copy_sl->stack_after_oper, descending_order_size) == -1 && (copy_sl->nb_rra == 0 || d->size_b <= 5))
 	{
 		while (cpy->prev_oper)
 		{
@@ -38,11 +44,11 @@ int	if_sorted(t_data *d, t_sub_lst *copy_sl)
 		while (cpy_lo->prev)
 		{
 			if (cpy_lo->oper_used == 1)
-				sa(d);
+				sb(d);
 			if (cpy_lo->oper_used == 2)
-				ra(d);
+				rb(d);
 			if (cpy_lo->oper_used == 4)
-				rra(d);
+				rrb(d);
 			cpy_lo = cpy_lo->prev;
 		}
 		sl_int_clear(&lst_oper);

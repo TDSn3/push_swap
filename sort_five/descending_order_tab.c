@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   descending_order_tab.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 12:11:38 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/03 17:18:33 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/05/21 13:15:25 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/03 14:21:28 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void    rra(t_data *d)
+int descending_order_tab(int *tab, int size)
 {
-    int tmp;
-	int tmp_two;
-	int i;
-	
-	if (!d->stack_a || d->size_a < 2)
-		return ;
+	int	i;
+
 	i = 0;
-	while (i < d->size_a)
+	if (!tab || size < 2)
+		return (-1);
+	while (i < size - 1)
 	{
-		if (i == 0)
-		{
-			tmp_two = d->stack_a[i];
-			d->stack_a[i] = d->stack_a[d->size_a - 1];
-		}
-        else
-        {
-            tmp = d->stack_a[i];
-            d->stack_a[i] = tmp_two;
-            tmp_two = tmp;
-        }
+		if (tab[i] < tab[i + 1])
+			return (i);
 		i++;
 	}
-	printf("rra\n");
+	return (-1);
 }
