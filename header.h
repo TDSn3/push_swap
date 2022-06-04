@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/03 15:28:31 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/04 10:10:35 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include "./libft/libft.h"
+
+int	OPER_;
 
 typedef struct s_data
 {
@@ -33,5 +35,7 @@ typedef struct s_data
 
 int		setup_struct(t_data *d, int argc, char **argv);
 void	show_stack(t_data d, int argc);
+int		pos_in_stack(int *tab, int size, int nb);
+int		find_pos_max(int *tab, int size);
 
 #endif

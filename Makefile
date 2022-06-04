@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/01 14:22:07 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/04 10:11:00 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ NAME = push_swap
 SRC += ./push_swap.c \
 	   ./setup_struct.c \
 	   ./show_stack.c \
+	   ./pos_in_stack.c \
+	   ./find_pos_max.c \
 	   ./libft/ft_strlen.c \
 	   ./libft/ft_atoi.c \
 

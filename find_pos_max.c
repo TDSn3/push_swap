@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   find_pos_min.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 11:15:50 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 09:43:49 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/04 08:22:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/04 10:10:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "header.h"
 
-void    rb(t_data *d)
+int	find_pos_max(int *tab, int size)
 {
-	int	stock_first;
-	int i;
-	
-	if (!d->stack_b || d->size_b < 2)
-		return ;
-	stock_first = d->stack_b[0];
-	i = 0;
-	while (i < d->size_b)
+	int	i;
+	int	tmp;
+	int	tmp_pos;
+
+	i = 1;
+	tmp = tab[0];
+	tmp_pos = 0;
+	while (i < size)
 	{
-		if (i == d->size_b - 1)
-			d->stack_b[i] = stock_first;
-		else
-			d->stack_b[i] = d->stack_b[i + 1];
+		if (tmp < tab[i])
+		{
+			tmp = tab[i];
+			tmp_pos = i;
+		}
 		i++;
 	}
-	printf("rb\n");
-	OPER_++;
+	return (tmp_pos);
 }
