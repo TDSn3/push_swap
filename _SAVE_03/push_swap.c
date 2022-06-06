@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/06 08:43:39 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/04 10:13:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	next(t_data *d)
 		rotate_choice(d,&size, tab);
 		sort_first_five_b(*d);		
 		free(tab);
-//		sort_first_five_a(*d);
 	}
 	while (d->size_b > 0)
 	{
@@ -96,6 +95,7 @@ int	*five_biggest_a(t_data *d, int *size)
 		j = 0;
 		i++;
 	}
+	sort_first_five_b(*d);
 	return (tab);
 }
 
@@ -131,42 +131,4 @@ void	rotate_choice(t_data *d, int *size, int *tab)
 		i = 0;
 		j++;
 	}
-}
-
-int	choice_better(t_data *d, int *size, int *tab)
-{
-	int	i;
-	int	j;
-	int top;
-	int	bot;
-	int	size_div;
-
-	i = 0;
-	j = 0;
-	top = 0;
-	bot = d->size_a - 1;
-	size_div = d->size_a / 2;
-	
-	if (d->size_a % 2 == 1 && d->size_a > 2)
-		size_div++;
-	while (i < size_div)
-	{
-		while (j < *size)
-		{
-			if (d->stack_a[top] == tab [j])
-			{
-				return (d->stack_a[top]);
-			}
-			if (d->stack_a[bot] == tab [j] && i < size_div - 1)
-			{
-				return (d->stack_a[bot]);
-			}
-			j++;
-		}
-		j = 0;
-		i++;
-		top++;
-		bot++;
-	}
-	return (0);
 }

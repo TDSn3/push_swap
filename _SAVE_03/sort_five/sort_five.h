@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 15:09:54 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:05:05 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,5 @@ int				*rra_ot(int *tab, int size);
 int				if_sorted_b(t_data *d, t_sub_lst *copy_sl);
 void			make_all_oper_b(t_double_lst *dl, t_data *d);
 void			sort_first_five_b(t_data d);
-
-int				if_sorted_a(t_data *d, t_sub_lst *copy_sl);
-void			make_all_oper_a(t_double_lst *dl, t_data *d);
-void			sort_first_five_a(t_data d);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 12:03:32 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/04 15:10:12 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/03 14:16:43 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,5 @@ SRC += ./sort_five/sort_five.c \
 	   ./sort_five/sort_first_five_b/if_sorted_b.c \
 	   ./sort_five/sort_first_five_b/make_all_oper_b.c \
 	   ./sort_five/sort_first_five_b/sort_first_five_b.c \
-	   ./sort_five/sort_first_five_a/if_sorted_a.c \
-	   ./sort_five/sort_first_five_a/make_all_oper_a.c \
-	   ./sort_five/sort_first_five_a/sort_first_five_a.c \
 
 all: $(SRC)
