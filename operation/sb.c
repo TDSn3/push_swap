@@ -25,5 +25,5 @@ void    sb(t_data *d)
 		d->stack_b[1] = tmp;
 	}
 	printf("sb\n");
-	OPER_++;
+	d->OPER_USED++;
 }

@@ -36,5 +36,6 @@ int setup_struct(t_data *d, int argc, char **argv)
 		d->stack_a[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
+	d->OPER_USED = 0;	// TO DELETE //
 	return (0);
 }

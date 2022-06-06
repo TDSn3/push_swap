@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   tli_add_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 12:11:38 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 09:44:05 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 16:18:44 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/06 15:57:41 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "t_list_int.h"
 
-void    rrb(t_data *d)
+void	tli_add_back(t_tli **lst, t_tli *new)
 {
-    int tmp;
-	int tmp_two;
-	int i;
-	
-	if (!d->stack_b || d->size_b < 2)
-		return ;
-	i = 0;
-	while (i < d->size_b)
+	t_tli	*copyl;
+
+	if (lst)
 	{
-		if (i == 0)
+		if (!*lst)
+			*lst = new;
+		else
 		{
-			tmp_two = d->stack_b[i];
-			d->stack_b[i] = d->stack_b[d->size_b - 1];
+			copyl = tli_last(*lst);
+			copyl->next = new;
 		}
-        else
-        {
-            tmp = d->stack_b[i];
-            d->stack_b[i] = tmp_two;
-            tmp_two = tmp;
-        }
-		i++;
 	}
-	printf("rrb\n");
-	d->OPER_USED++;
 }

@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 15:04:22 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/06 15:41:37 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include "./libft/libft.h"
-
-int	OPER_;
+# include "./t_list_int/t_list_int.h"
 
 typedef struct s_data
 {
@@ -28,6 +27,7 @@ typedef struct s_data
 	int		size_a;
 	int		*stack_b;
 	int		size_b;
+	int		OPER_USED;	// TO DELETE //
 }	t_data;
 
 # include "./operation/operation.h"

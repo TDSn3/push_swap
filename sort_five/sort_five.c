@@ -18,16 +18,28 @@ void    sort_five(t_data d)
 
 	dl = dl_new();
 	if (ascending_order_tab(d.stack_a, d.size_a) == -1)
+	{
+		dl_clear(&dl);
 		return;
+	}
 	dl->sub_lst = sl_new(1, sa_dt(d.stack_a, d.size_a), 0);
 	if (if_sorted(&d, (dl_last(dl))->sub_lst))
+	{
+		dl_clear(&dl);
 		return;
+	}
 	sl_add_back(&dl->sub_lst, sl_new(2, ra_dt(d.stack_a, d.size_a), 0));
 	if (if_sorted(&d, (dl_last(dl))->sub_lst))
+	{
+		dl_clear(&dl);
 		return;
+	}
 	sl_add_back(&dl->sub_lst, sl_new(4, rra_dt(d.stack_a, d.size_a), 0));
 	if (if_sorted(&d, (dl_last(dl))->sub_lst))
+	{
+		dl_clear(&dl);
 		return;
-	make_all_oper(dl, &d, 0);  
-    dl_clear(&dl);
+	}
+	make_all_oper(dl, &d, 0);
+	dl_clear(&dl);
 }

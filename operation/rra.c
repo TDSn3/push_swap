@@ -37,5 +37,5 @@ void    rra(t_data *d)
 		i++;
 	}
 	printf("rra\n");
-	OPER_++;
+	d->OPER_USED++;
 }

@@ -16,6 +16,7 @@ void	dl_clear(t_double_lst **dl)
 {
 	t_double_lst	*copydl;
 	t_sub_lst		*copysl;
+	t_sub_lst		*copysl_two;
 
 	copydl = *dl;
 	while (copydl)
@@ -24,10 +25,11 @@ void	dl_clear(t_double_lst **dl)
 		copysl = copydl->sub_lst;
 		while (copysl)
 		{
+			copysl_two = copysl;
 			free(copysl->stack_after_oper);
 			copysl = copysl->next;
+			free(copysl_two);
 		}
-		free(copydl->sub_lst);
 		free(copydl);
 		copydl = *dl;
 	}

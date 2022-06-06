@@ -53,5 +53,5 @@ void    pa(t_data *d)
 		d->size_b--;
 	}
 	printf("pa\n");
-	OPER_++;
+	d->OPER_USED += 1;
 }

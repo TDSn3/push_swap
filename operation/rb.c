@@ -30,5 +30,5 @@ void    rb(t_data *d)
 		i++;
 	}
 	printf("rb\n");
-	OPER_++;
+	d->OPER_USED++;
 }

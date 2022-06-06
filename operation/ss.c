@@ -16,5 +16,5 @@ void    ss(t_data **d)
 {
     sa(*d);
     sb(*d);
-	OPER_++;
+	(*d)->OPER_USED++;
 }

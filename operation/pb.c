@@ -53,5 +53,5 @@ void    pb(t_data *d)
 		d->size_a--;
 	}
 	printf("pb\n");
-	OPER_++;
+	d->OPER_USED++;
 }

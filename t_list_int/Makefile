@@ -5,40 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/06 15:42:10 by tda-silv         ###   ########.fr        #
+#    Created: 2022/06/01 12:03:32 by tda-silv          #+#    #+#              #
+#    Updated: 2022/06/06 15:55:43 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include ./operation/Makefile
-include ./sort_five/Makefile
-include ./t_list_int/Makefile
+SRC += ./t_list_int/tli_new.c \
+	   ./t_list_int/tli_add_back.c \
+	   ./t_list_int/tli_last.c \
+	   ./t_list_int/tli_clear.c \
 
-CC = clang
-
-CFLAGS = -Wall -Wextra -Werror
-
-NAME = push_swap
-
-SRC += ./push_swap.c \
-	   ./setup_struct.c \
-	   ./show_stack.c \
-	   ./pos_in_stack.c \
-	   ./find_pos_max.c \
-	   ./libft/ft_strlen.c \
-	   ./libft/ft_atoi.c \
-
-all: $(NAME)
-
-$(NAME): $(SRC)
-	$(CC) $(CFLAGS) -o $(NAME) $^ -g3 -fsanitize=address
-
-#clean:
-#	rm -f $(OBJ)
-
-fclean: #clean
-	rm -f $(NAME)
-
-re: fclean all
-
-.PHONY: all clean fclean re
+all: $(SRC)

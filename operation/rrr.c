@@ -16,5 +16,5 @@ void    rrr(t_data **d)
 {
     rra(*d);
     rrb(*d);
-	OPER_++;
+	(*d)->OPER_USED++;
 }
