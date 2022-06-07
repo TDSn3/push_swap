@@ -6,11 +6,11 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/06 15:50:05 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:51:37 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "t_list_int.h"
+# include "../../header.h"
 
 t_tli	*tli_new(int content)
 {
@@ -21,5 +21,6 @@ t_tli	*tli_new(int content)
 		return (NULL);
 	ln->content = content;
 	ln->next = NULL;
+	ln->prev = NULL;
 	return (ln);
 }

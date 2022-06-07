@@ -6,40 +6,19 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 15:09:54 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:57:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SORT_FIVE_H
 # define SORT_FIVE_H
 
-# include "../header.h"
-
-typedef struct s_sub_lst
-{
-	struct s_sub_lst	*prev;
-	struct s_sub_lst	*next;
-	int					oper_used;
-	int					nb_rra;
-	int					*stack_after_oper;
-	struct s_sub_lst	*prev_oper;
-	struct s_sub_lst	*next_oper;
-}	t_sub_lst;
-
-typedef	struct s_double_lst
-{
-	struct s_double_lst	*prev;
-	struct s_double_lst	*next;
-	t_sub_lst			*sub_lst;
-}	t_double_lst;
-
-void			sort_five(t_data d);
+void			sort_five(t_data *d);
 int				if_sorted(t_data *d, t_sub_lst *copy_sl);
 void			make_all_oper(t_double_lst *dl, t_data *d, int i);
 int				ascending_order_tab(int *tab, int size);
 int				descending_order_tab(int *tab, int size);
 int				*dup_tab(int *tab, int size);
-
 
 t_double_lst	*dl_new();
 t_sub_lst		*sl_new(int oper_used, int *stack_after_oper, int nb_rra);
@@ -61,10 +40,10 @@ int				*rra_ot(int *tab, int size);
 
 int				if_sorted_b(t_data *d, t_sub_lst *copy_sl);
 void			make_all_oper_b(t_double_lst *dl, t_data *d);
-void			sort_first_five_b(t_data d);
+void			sort_first_five_b(t_data *d);
 
 int				if_sorted_a(t_data *d, t_sub_lst *copy_sl);
 void			make_all_oper_a(t_double_lst *dl, t_data *d);
-void			sort_first_five_a(t_data d);
+void			sort_first_five_a(t_data *d);
 
 #endif

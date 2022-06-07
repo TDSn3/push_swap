@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_list_int.h                                       :+:      :+:    :+:   */
+/*   smart_sort_five_b.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 07:22:10 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/07 12:18:15 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/07 13:09:45 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_LIST_INT_H
-# define T_LIST_INT_H
+#ifndef SMART_SORT_FIVE_B_H
+# define SMART_SORT_FIVE_B_H
 
-# include "../header.h"
-
-typedef struct s_tli
-{
-	int				content;
-	struct s_tli	*next;
-}	t_tli;
-
-t_tli	*tli_new(int content);
-void	tli_add_back(t_tli **lst, t_tli *new);
-int		tli_size(t_tli *lst);
-t_tli	*tli_last(t_tli *lst);
-void	tli_clear(t_tli **lst);
-t_tli	*find_pos_max_tli(t_tli *tli);
-
+int		choice_better_give_nb(t_data *d, int nb);
+t_tli	*choice_better(t_data *d, t_tli *tli);
+t_tli	*five_smaller_a(t_data *d, t_tli *tli);
+int		pos_in_stack(int *tab, int size, int nb);
+void	rotate_choice(t_data *d, t_tli *tli);
 
 #endif

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tli_add_back.c                                     :+:      :+:    :+:   */
+/*   tli_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 16:18:44 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/06 15:57:41 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 13:59:36 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/07 12:51:42 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "t_list_int.h"
+# include "../../header.h"
 
-void	tli_add_back(t_tli **lst, t_tli *new)
+int	tli_size(t_tli *lst)
 {
-	t_tli	*copyl;
+	t_tli	*nextl;
+	size_t	i;
 
-	if (lst)
+	i = 0;
+	nextl = lst;
+	if (!lst)
+		return (0);
+	while (nextl)
 	{
-		if (!*lst)
-			*lst = new;
-		else
-		{
-			copyl = tli_last(*lst);
-			copyl->next = new;
-		}
+		nextl = nextl->next;
+		i++;
 	}
+	return (i);
 }

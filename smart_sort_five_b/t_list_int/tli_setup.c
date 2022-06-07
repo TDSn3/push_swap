@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pos_in_stack.c                                     :+:      :+:    :+:   */
+/*   tli_setup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 07:55:30 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 07:55:53 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/07 12:09:14 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/07 12:51:40 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+# include "../../header.h"
 
-int	pos_in_stack(int *tab, int size, int nb)
+t_tli	*setup_tli(t_data *d, t_tli *tli)
 {
-	int i;
+	int		i;
+	int		size;
+
+	if (d->size_a == 0)
+		return (NULL);
+	if (d->size_a > 5)
+		size = 5;
+	else
+		size = d->size_a;
 
 	i = 0;
 	while (i < size)
 	{
-		if (nb == tab[i])
-			return (i);
+		tli_add_back(&tli, tli_new(d->stack_a[i]));
 		i++;
 	}
-	return (-1);
+	return (tli);
 }

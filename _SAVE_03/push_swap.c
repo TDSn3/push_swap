@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 10:13:53 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:26:32 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	*five_biggest_a(t_data *d, int *size)
 		{
 			if (tab[j] > d->stack_a[i])
 			{
-				tab[find_pos_max(tab, *size)] = d->stack_a[i];
+				tab[find_pos_min(tab, *size)] = d->stack_a[i];
 				break;
 			}
 			j++;

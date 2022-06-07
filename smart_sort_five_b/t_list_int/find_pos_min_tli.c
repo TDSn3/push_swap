@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tli_clear.c                                        :+:      :+:    :+:   */
+/*   find_pos_max_tli.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/06 15:50:56 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/04 08:22:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/07 13:29:05 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "t_list_int.h"
+# include "../../header.h"
 
-void	tli_clear(t_tli **lst)
+t_tli	*find_pos_min_tli(t_tli *tli)
 {
-	t_tli	*copyl;
+	t_tli	*tli_pos;
+	t_tli	*tli_cpy;
 
-	copyl = *lst;
-	while (copyl)
+	tli_cpy = tli->next;
+	tli_pos = tli;
+	while (tli_cpy)
 	{
-		*lst = copyl->next;
-		free(copyl);
-		copyl = *lst;
+		if (tli_pos->content < tli_cpy->content)
+			tli_pos = tli_cpy;
+		tli_cpy = tli_cpy->next;
 	}
-	*lst = NULL;
+	return (tli_pos);
 }

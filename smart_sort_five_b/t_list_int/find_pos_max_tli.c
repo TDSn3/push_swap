@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation.h                                        :+:      :+:    :+:   */
+/*   find_pos_max_tli.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 12:57:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/04 08:22:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/07 13:30:06 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERATION_H
-# define OPERATION_H
+# include "../../header.h"
 
-void    sa(t_data *d);
-void    sb(t_data *d);
-void    ss(t_data **d);
-void    pa(t_data *d);
-void    pb(t_data *d);
-void    ra(t_data *d);
-void    rb(t_data *d);
-void    rr(t_data **d);
-void    rra(t_data *d);
-void    rrb(t_data *d);
-void    rrr(t_data **d);
+t_tli	*find_pos_max_tli(t_tli *tli)
+{
+	t_tli	*tli_pos;
+	t_tli	*tli_cpy;
 
-#endif
+	tli_cpy = tli->next;
+	tli_pos = tli;
+	while (tli_cpy)
+	{
+		if (tli_pos->content > tli_cpy->content)
+			tli_pos = tli_cpy;
+		tli_cpy = tli_cpy->next;
+	}
+	return (tli_pos);
+}

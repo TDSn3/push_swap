@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_pos_max.c                                     :+:      :+:    :+:   */
+/*   five_biggest_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 08:22:00 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 13:28:08 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/07 12:18:27 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/07 13:30:56 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+# include "../header.h"
 
-int	find_pos_max(int *tab, int size)
+t_tli	*five_biggest_a(t_data *d, t_tli *tli)
 {
 	int	i;
-	int	tmp;
-	int	tmp_pos;
+	t_tli	*tli_cpy;
+	
+	i = tli_size(tli);
+	tli_cpy = tli;
+	if (d->size_a == 0)
+		return (NULL);
 
-	i = 1;
-	tmp = tab[0];
-	tmp_pos = 0;
-	while (i < size)
+	while (i < d->size_a)
 	{
-		if (tmp > tab[i])
+		while (tli_cpy)
 		{
-			tmp = tab[i];
-			tmp_pos = i;
+			if (tli_cpy->content < d->stack_a[i])
+			{
+				find_pos_max_tli(tli)->content = d->stack_a[i];
+				break;
+			}
+			tli_cpy = tli_cpy->next;
 		}
+		tli_cpy = tli;
 		i++;
 	}
-	return (tmp_pos);
+	return (tli);
 }

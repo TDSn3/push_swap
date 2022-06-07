@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation.h                                        :+:      :+:    :+:   */
+/*   find_pos_min.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 12:57:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/04 08:22:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/07 13:26:57 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERATION_H
-# define OPERATION_H
+#include "header.h"
 
-void    sa(t_data *d);
-void    sb(t_data *d);
-void    ss(t_data **d);
-void    pa(t_data *d);
-void    pb(t_data *d);
-void    ra(t_data *d);
-void    rb(t_data *d);
-void    rr(t_data **d);
-void    rra(t_data *d);
-void    rrb(t_data *d);
-void    rrr(t_data **d);
+int	find_pos_min(int *tab, int size)
+{
+	int	i;
+	int	tmp;
+	int	tmp_pos;
 
-#endif
+	i = 1;
+	tmp = tab[0];
+	tmp_pos = 0;
+	while (i < size)
+	{
+		if (tmp < tab[i])
+		{
+			tmp = tab[i];
+			tmp_pos = i;
+		}
+		i++;
+	}
+	return (tmp_pos);
+}
