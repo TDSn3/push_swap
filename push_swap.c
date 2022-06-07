@@ -6,21 +6,22 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/06 16:10:57 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/07 07:50:50 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 int		*dup_stack_a(t_data d);
-int		*five_biggest_a(t_data *d, int *size);
+t_tli	*five_biggest_a(t_data *d, t_tli *tli);
 void	next(t_data *d);
-void	rotate_choice(t_data *d, int *size, int **tab);
+void	rotate_choice(t_data *d, t_tli *tli);
 int		choice_better_give_nb(t_data *d, int nb);
 int		*choice_better(t_data *d, int *size, int *tab);
 int		*select_and_del(int *size, int **tab, int nb_del);
 int		*ft_strdup2(int *s, int size);
 size_t	ft_strlcpy2(int *dst, int *src, int size);
+t_tli	*setup_tli(t_data *d, t_tli *tli);
 
 
 int main(int argc, char *argv[])
@@ -44,125 +45,91 @@ int main(int argc, char *argv[])
 
 void	next(t_data *d)
 {
-	int	size;
-	int	*tab;
+	t_tli	*tli;
 
+	tli = NULL;
+	tli = setup_tli(d, tli);
 //	while (d->size_a > 0)
 //	{
-		tab = five_biggest_a(d, &size);
-		rotate_choice(d,&size, &tab);
+		tli = five_biggest_a(d, tli);
+		rotate_choice(d, tli);
 //		sort_first_five_b(*d);		
-		free(tab);
 //		sort_first_five_a(*d);
 //	}
 //	while (d->size_b > 0)
 //	{
 //		pa(d);
 //	}
+	tli_clear(&tli);
 }
 
-int	*five_biggest_a(t_data *d, int *size)
+t_tli	*five_biggest_a(t_data *d, t_tli *tli)
 {
 	int	i;
-	int	j;
-	int	*tab;
-
+	t_tli	*tli_cpy;
+	
+	i = 0;
+	tli_cpy = tli;
 	if (d->size_a == 0)
 		return (NULL);
 
-	if (d->size_a > 5)
-		*size = 5;
-	else
-		*size = d->size_a;
-
-	tab = NULL;
-	tab = malloc(sizeof(int) * (*size));
-	if (!tab)
-		return (NULL);
-
-	i = 0;
-	j = 0;
-	while (i < *size)
-	{
-		tab[i] = d->stack_a[i];
-		i++;
-	}
 	while (i < d->size_a)
 	{
-		while (j < *size)
+		while (tli_cpy)
 		{
-			if (tab[j] > d->stack_a[i])
+			if (tli_cpy->content > d->stack_a[i])
 			{
-				tab[find_pos_max(tab, *size)] = d->stack_a[i];
+				find_pos_max_tli(tli)->content = d->stack_a[i];
 				break;
 			}
-			j++;
+			tli_cpy = tli_cpy->next;
 		}
-		j = 0;
+		tli_cpy = tli;
 		i++;
 	}
-	return (tab);
+	return (tli);
 }
 
-void	rotate_choice(t_data *d, int *size, int **tab)
+void	rotate_choice(t_data *d, t_tli *tli)
 {
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	t_tli	*tli_cpy;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	
-	int	ii;
-
-	ii = 1;
-	t_tli *tli;
-
-	tli = tli_new((*tab)[0]);
-
-	t_tli	*tli_cpy;
-
 	tli_cpy = tli;
-	while (ii < *size)
-	{
-		tli_add_back(&tli, tli_new((*tab)[ii]));
-		ii++;
-	}
 
 	for (t_tli *x = tli ; x ; x = x->next)
 		printf("\n%d", x->content);
+	printf("\n\n");
 
-	tli_clear(&tli);
-
-	while (j < *size)
+	while (tli_cpy)
 	{
-		while (d->stack_a[i] != (*tab)[j] && i < d->size_a)
-		{
+		while (d->stack_a[i] != tli_cpy->content && i < d->size_a)
 			i++;
-		}
 		if (pos_in_stack(d->stack_a, d->size_a, d->stack_a[i]) > d->size_a / 2)
 		{
-			while (d->stack_a[0] != (*tab)[j] && k < d->size_a)
+			while (d->stack_a[0] != tli_cpy->content && j < d->size_a)
 			{
 				rra(d);
-				k++;
+				j++;
 			}
-			k = 0;
+			j = 0;
 			pb(d);
 		}
 		else
 		{
-			while (d->stack_a[0] != (*tab)[j] && k < d->size_a)
+			while (d->stack_a[0] != tli_cpy->content && j < d->size_a)
 			{
 				ra(d);
-				k++;
+				j++;
 			}
-			k = 0;
+			j = 0;
 			pb(d);
 		}
 		i = 0;
-		j++;
+		tli_cpy = tli_cpy->next;
 	}
 }
 
@@ -209,18 +176,33 @@ int	choice_better_give_nb(t_data *d, int nb)
 	}
 	return (0);
 }
-/*
-int	*select_and_del(int *size, int **tab, int nb_del, t_list lst)
+
+t_tli	*setup_tli(t_data *d, t_tli *tli)
 {
-	int	i;
+	int		i;
+	int		size;
+
+	if (d->size_a == 0)
+		return (NULL);
+	if (d->size_a > 5)
+		size = 5;
+	else
+		size = d->size_a;
 
 	i = 0;
 	while (i < size)
 	{
-		ft_lstadd_back()
+		tli_add_back(&tli, tli_new(d->stack_a[i]));
+		i++;
 	}
+
+	for (t_tli *x = tli ; x ; x = x->next)
+		printf("\n%d", x->content);
+	printf("\n\n");
+
+	return (tli);
 }
-*/
+
 int	*ft_strdup2(int *s, int size)
 {
 	int	*copy;
