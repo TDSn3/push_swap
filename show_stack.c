@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:29:53 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 08:37:39 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:31:48 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	show_stack(t_data d, int argc)
 	int	i;
 	
 	i = 1;
+	printf("\033[36;01m");
 	while (i < argc)
 	{
 		if (i - 1 < d.size_a)
@@ -29,5 +30,8 @@ void	show_stack(t_data d, int argc)
 			printf("\n");
 		i++;
 	}
-	printf("---------\na\tb\n");	
+	printf("\n\033[00m");
+	printf("\033[35m");
+	printf("---------\na\tb\n");
+	printf("\n\033[00m");	
 }
