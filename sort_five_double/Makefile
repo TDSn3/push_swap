@@ -5,27 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/01 12:03:32 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/08 08:57:09 by tda-silv         ###   ########.fr        #
+#    Created: 2022/06/08 07:04:08 by tda-silv          #+#    #+#              #
+#    Updated: 2022/06/08 08:28:08 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =	./operation/sa.c \
-		./operation/sb.c \
-		./operation/ss.c \
-		./operation/pa.c \
-		./operation/pb.c \
-		./operation/ra.c \
-		./operation/rb.c \
-		./operation/rr.c \
-		./operation/rra.c \
-		./operation/rrb.c \
-		./operation/rrr.c \
-		./operation/oper_double/od_sa.c \
-		./operation/oper_double/od_sb.c \
-		./operation/oper_double/od_ra.c \
-		./operation/oper_double/od_rb.c \
-		./operation/oper_double/od_rra.c \
-		./operation/oper_double/od_rrb.c \
+SRC += ./sort_five_double/sfd_a/sfd_if_sorted_a.c \
+	   ./sort_five_double/sfd_a/sfd_make_all_oper_a.c \
+	   ./sort_five_double/sfd_a/sfd_sort_first_five_a.c \
+	   ./sort_five_double/sfd_b/sfd_if_sorted_b.c \
+	   ./sort_five_double/sfd_b/sfd_make_all_oper_b.c \
+	   ./sort_five_double/sfd_b/sfd_sort_first_five_b.c \
+	   ./sort_five_double/sort_five_double.c \
 
 all: $(SRC)
+

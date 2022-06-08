@@ -1,9 +1,0 @@
-{
-    "makefile.extensionOutputFolder": "./.vscode",
-    "files.associations": {
-        "t_list_int.h": "c",
-        "smart_sort_five_b.h": "c",
-        "libft.h": "c",
-        "sort_five.h": "c"
-    }
-}

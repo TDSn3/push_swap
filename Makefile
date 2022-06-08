@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/07 13:27:58 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/08 07:12:55 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ include ./sort_five/Makefile
 include ./smart_sort_five_b/t_list_int/Makefile
 include ./smart_sort_five_b/Makefile
 include ./smart_sort_five_a/Makefile
+include ./sort_five_double/Makefile
 
 CC = clang
 

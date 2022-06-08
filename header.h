@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 13:27:43 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/08 07:09:48 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include "./smart_sort_five_b/smart_sort_five_b.h"
 # include "./smart_sort_five_a/smart_sort_five_a.h"
 # include "./operation/operation.h"
+# include "./sort_five_double/sort_five_double.h"
 
 int		setup_struct(t_data *d, int argc, char **argv);
 void	show_stack(t_data d, int argc);

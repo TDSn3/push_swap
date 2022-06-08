@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 14:13:38 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:43:38 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int main(int argc, char *argv[])
 
 void	next(t_data *d)
 {
-	int		i;
+//	int		i;
 	t_tli	*tli_b;
 	t_tli	*tli_a;
 
-	i = d->size_a / 2;
+//	i = d->size_a / 2;
 
 	if (d->size_a < 6)
 	{
@@ -59,11 +59,14 @@ void	next(t_data *d)
 		tli_a = five_biggest_a(d, tli_a);
 		up_biggest_lti_a(d, tli_a);
 
-		printf("----\n");
-		sort_first_five_b(d);	
-		printf("----\n");	
-		sort_first_five_a(d);
-	}
+//		printf("----\n");
+//		sort_first_five_b(d);	
+//		printf("----\n");	
+//		sort_first_five_a(d);
+
+		sort_five_double(d);
+
+//	}
 //	while (d->size_b > 0)
 //		pa(d);
 }

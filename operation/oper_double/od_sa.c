@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   od_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 12:11:38 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/08 08:55:28 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/08 08:54:55 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "../../header.h"
 
-void    rrr(t_data **d)
+void    od_sa(t_data *d)
 {
-    od_rra(*d);
-    od_rrb(*d);
-    printf("rrr\n");
-	(*d)->OPER_USED++;
+	int tmp;
+
+	if (!d->stack_a || d->size_a < 2)
+		return ;
+	else
+	{
+		tmp = d->stack_a[0];
+		d->stack_a[0] = d->stack_a[1];
+		d->stack_a[1] = tmp;
+	}
 }
