@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/08 13:21:01 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/10 07:50:07 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ void	next(t_data *d)
 	t_tli	*tli_b;
 	t_tli	*tli_a;
 	t_tli	*stock_tli_a;
+	t_tli	*firstpart_stock_a;
+	t_tli	*stock_tli_b;
+	t_tli	*firstpart_stock_b;
 
 	i = d->size_a / 2;
 
@@ -51,6 +54,7 @@ void	next(t_data *d)
 	}
 
 	stock_tli_a = NULL;
+	firstpart_stock_a = NULL;
 
 	while (d->size_a > i)
 	{
@@ -63,21 +67,14 @@ void	next(t_data *d)
 		tli_a = tli_setup_a(d, tli_a, stock_tli_a);
 		tli_a = five_biggest_a(d, tli_a, stock_tli_a);		
 		stock_tli_a = tli_cpy(tli_a, stock_tli_a);
-		up_biggest_lti_a(d, tli_a);
-		
-//		printf("----\n");
-//		sort_first_five_b(d);	
-//		printf("----\n");	
-//		sort_first_five_a(d);
-		
+		up_biggest_lti_a(d, tli_a, firstpart_stock_a);
 		sort_five_double(d);
-		printf("------\n");
-		show_stack(*d, 50);
+		firstpart_stock_a = tli_cpy(stock_tli_a, firstpart_stock_a);
 	}
 	while (d->size_b > 0)
 		pa(d);
-
 	tli_clear(&stock_tli_a);
+	tli_clear(&firstpart_stock_a);
 }
 
 t_tli	*tli_cpy(t_tli *tli, t_tli *stock_tli_a)
