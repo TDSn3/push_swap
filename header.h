@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/08 07:09:48 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:20:33 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 # include "./sort_five_double/sort_five_double.h"
 
 int		setup_struct(t_data *d, int argc, char **argv);
-void	show_stack(t_data d, int argc);
 int		find_pos_max(int *tab, int size);
 int		find_pos_min(int *tab, int size);
+t_tli	*tli_cpy(t_tli *tli, t_tli *stock_tli_a_ten);
 
 #endif

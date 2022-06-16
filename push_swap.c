@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/10 14:48:52 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:48:17 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,17 @@
 
 void	next(t_data *d);
 
-t_tli	*tli_cpy(t_tli *tli, t_tli *stock_tli_a_ten);
-
 int main(int argc, char *argv[])
 {
 	t_data d;
+
+	if (argc < 2)
+		return (0);
 
 	if (setup_struct(&d, argc, argv))
 		return (1);
 
 	next(&d);
-	
-	printf("\n");
-	show_stack(d, argc);
-	printf("\n\033[33;01m%d\033[00m \033[33;03moperation used\033[00m\n", d.OPER_USED);	// TO DELETE //
-
-	if (ascending_order_tab(d.stack_a, d.size_a) == -1)
-		printf("\n\033[02;03mOK !\033[00m\n");
-	else
-		printf("\n\033[02;03mNOT SORTED !\033[00m\n");
-
 	free(d.stack_a);
 	free(d.stack_b);
 	
@@ -86,7 +77,7 @@ void	next(t_data *d)
 	tli_b_half_a = five_smaller_a(d, tli_b_half_a);
 	rotate_choice(d, tli_b_half_a);
 
-	while (ascending_order_tab(d->stack_a, d->size_a) != -1 && d->OPER_USED < 15000)
+	while (ascending_order_tab(d->stack_a, d->size_a) != -1)
 	{
 		if (nb_while % 8 == 0)
 		{
@@ -140,17 +131,4 @@ void	next(t_data *d)
 	tli_clear(&stock_tli_b_five);
 	tli_clear(&firstpart_stock_b_five);
 
-}
-
-t_tli	*tli_cpy(t_tli *tli, t_tli *stock_tli_a_ten)
-{
-	t_tli	*tli_i;
-
-	tli_i = tli;
-	while (tli_i)
-	{
-		tli_add_back(&stock_tli_a_ten, tli_new(tli_i->content));
-		tli_i = tli_i->next; 
-	}
-	return (stock_tli_a_ten);
 }

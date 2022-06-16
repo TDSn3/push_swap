@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 11:15:50 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/04 09:43:49 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:12:06 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ void    rb(t_data *d)
 			d->stack_b[i] = d->stack_b[i + 1];
 		i++;
 	}
-	printf("rb\n");
-	d->OPER_USED++;
+	write(1, "rb\n", 3);
 }

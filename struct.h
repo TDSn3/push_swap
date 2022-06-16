@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:03:17 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 13:03:51 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:08:43 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ typedef struct s_data
 	int		size_a;
 	int		*stack_b;
 	int		size_b;
-	int		OPER_USED;	// TO DELETE //
 }	t_data;
 
 typedef struct s_sub_lst
