@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:10:52 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/03 17:15:51 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:40:47 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,18 +110,3 @@ static int	check_duplicate(t_double_lst *dl, t_data *d, int *tab)
 	free(tab);
 	return (0);
 }
-/*
-static void		show_stack_b(int *tab, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (i < size)
-			printf("%d", tab[i]);
-		i++;
-	}
-	printf(" ");
-}
-*/

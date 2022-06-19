@@ -6,15 +6,15 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/15 16:11:57 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 08:54:52 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void    rr(t_data **d)
+void	rr(t_data **d)
 {
-    od_ra(*d);
-    od_rb(*d);
-    write(1, "rr\n", 3);
+	od_ra(*d);
+	od_rb(*d);
+	write(1, "rr\n", 3);
 }

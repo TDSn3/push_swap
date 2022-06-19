@@ -6,19 +6,22 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:11:38 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 14:40:19 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:34:43 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-int    *rra_dt(int *tab, int size)
+static void	rra_dt_two(int tmp, int *copy, int *tmp_two, int i);
+
+int	*rra_dt(int *tab, int size)
 {
-    int	*copy;
-	int tmp;
-	int tmp_two;
-	int i;
-	
+	int	*copy;
+	int	tmp;
+	int	tmp_two;
+	int	i;
+
+	tmp = 0;
 	if (!tab || size < 2)
 		return (NULL);
 	i = 0;
@@ -32,13 +35,16 @@ int    *rra_dt(int *tab, int size)
 			tmp_two = copy[i];
 			copy[i] = copy[size - 1];
 		}
-        else
-        {
-            tmp = copy[i];
-            copy[i] = tmp_two;
-            tmp_two = tmp;
-        }
+		else
+			rra_dt_two(tmp, copy, &tmp_two, i);
 		i++;
 	}
 	return (copy);
+}
+
+static void	rra_dt_two(int tmp, int *copy, int *tmp_two, int i)
+{
+	tmp = copy[i];
+	copy[i] = *tmp_two;
+	*tmp_two = tmp;
 }

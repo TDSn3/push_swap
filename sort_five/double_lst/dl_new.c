@@ -6,13 +6,13 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 14:26:24 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 12:35:08 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-t_double_lst	*dl_new()
+t_double_lst	*dl_new(void)
 {
 	t_double_lst	*dln;
 

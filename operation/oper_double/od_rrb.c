@@ -6,18 +6,18 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:11:38 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/08 08:54:53 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 09:14:43 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-void    od_rrb(t_data *d)
+void	od_rrb(t_data *d)
 {
-    int tmp;
-	int tmp_two;
-	int i;
-	
+	int	tmp;
+	int	tmp_two;
+	int	i;
+
 	if (!d->stack_b || d->size_b < 2)
 		return ;
 	i = 0;
@@ -28,12 +28,12 @@ void    od_rrb(t_data *d)
 			tmp_two = d->stack_b[i];
 			d->stack_b[i] = d->stack_b[d->size_b - 1];
 		}
-        else
-        {
-            tmp = d->stack_b[i];
-            d->stack_b[i] = tmp_two;
-            tmp_two = tmp;
-        }
+		else
+		{
+			tmp = d->stack_b[i];
+			d->stack_b[i] = tmp_two;
+			tmp_two = tmp;
+		}
 		i++;
 	}
 }

@@ -6,28 +6,22 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 12:03:32 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/19 09:05:51 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/19 09:36:38 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =	./operation/sa.c \
-		./operation/sb.c \
-		./operation/ss.c \
-		./operation/pa.c \
-		./operation/pb.c \
-		./operation/ra.c \
-		./operation/rb.c \
-		./operation/rr.c \
-		./operation/rra.c \
-		./operation/rrb.c \
-		./operation/rrr.c \
-		./operation/oper_double/od_sa.c \
-		./operation/oper_double/od_sb.c \
-		./operation/oper_double/od_pa.c \
-		./operation/oper_double/od_pb.c \
-		./operation/oper_double/od_ra.c \
-		./operation/oper_double/od_rb.c \
-		./operation/oper_double/od_rra.c \
-		./operation/oper_double/od_rrb.c \
+SRC += ./t_list_int/tli_new.c \
+	   ./t_list_int/tli_setup_a_five.c \
+	   ./t_list_int/tli_setup_a_ten.c \
+	   ./t_list_int/tli_setup_b_five.c \
+	   ./t_list_int/tli_setup_b_ten.c \
+	   ./t_list_int/tli_setup_b_half_a.c \
+	   ./t_list_int/tli_add_back.c \
+	   ./t_list_int/tli_size.c \
+	   ./t_list_int/tli_last.c \
+	   ./t_list_int/tli_clear.c \
+	   ./t_list_int/tli_clear_one.c \
+	   ./t_list_int/find_pos_max_tli.c \
+	   ./t_list_int/find_pos_min_tli.c \
 
 all: $(SRC)

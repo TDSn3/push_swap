@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   tli_last.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 08:53:52 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 14:52:12 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:17:34 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	sa(t_data *d)
+t_tli	*tli_last(t_tli *lst)
 {
-	int	tmp;
-
-	if (!d->stack_a || d->size_a < 2)
-		return ;
-	else
-	{
-		tmp = d->stack_a[0];
-		d->stack_a[0] = d->stack_a[1];
-		d->stack_a[1] = tmp;
-	}
-	write(1, "sa\n", 3);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

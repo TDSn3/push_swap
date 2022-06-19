@@ -6,17 +6,17 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 11:15:50 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/15 16:12:18 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 08:19:52 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void    ra(t_data *d)
+void	ra(t_data *d)
 {
 	int	stock_first;
-	int i;
-	
+	int	i;
+
 	if (!d->stack_a || d->size_a < 2)
 		return ;
 	stock_first = d->stack_a[0];

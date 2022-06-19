@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:19:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/08 08:24:58 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:06:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,6 @@ int	sfd_if_sorted_a(t_data *d, t_sub_lst *copy_sl, t_sub_lst **lst_oper)
 		cpy_lo = *lst_oper;
 		while (cpy_lo->next)
 			cpy_lo = cpy_lo->next;
-//		while (cpy_lo->prev)
-//		{
-//			if (cpy_lo->oper_used == 1)
-//				sa(d);
-//			if (cpy_lo->oper_used == 2)
-//				ra(d);
-//			if (cpy_lo->oper_used == 4)
-//				rra(d);
-//			cpy_lo = cpy_lo->prev;
-//		}
-//		sl_int_clear(&lst_oper);	// ADD IN THE FUTUR //
 		*lst_oper = cpy_lo;
 		return (nb_oper);
 	}

@@ -6,13 +6,13 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 13:15:25 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 23:11:10 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 11:57:11 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-int ascending_order_tab(int *tab, int size)
+int	ascending_order_tab(int *tab, int size)
 {
 	int	i;
 

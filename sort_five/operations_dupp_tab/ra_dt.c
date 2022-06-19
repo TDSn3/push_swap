@@ -6,18 +6,18 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 11:15:50 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/01 14:40:16 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 12:44:48 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-int    *ra_dt(int *tab, int size)
+int	*ra_dt(int *tab, int size)
 {
-    int	*copy;
+	int	*copy;
 	int	stock_first;
-	int i;
-	
+	int	i;
+
 	if (!tab || size < 2)
 		return (NULL);
 	copy = dup_tab(tab, size);

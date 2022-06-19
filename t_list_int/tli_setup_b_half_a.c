@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   tli_setup_b_half_a.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 08:53:52 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/07 12:09:14 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:17:01 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	sa(t_data *d)
+t_tli	*tli_setup_b_half_a(t_data *d, t_tli *tli, int size_b)
 {
-	int	tmp;
+	int		i;
+	int		size;
 
-	if (!d->stack_a || d->size_a < 2)
-		return ;
+	if (d->size_a == 0)
+		return (NULL);
+	if (d->size_a > size_b)
+		size = size_b;
 	else
+		size = d->size_a;
+	i = 0;
+	while (i < size)
 	{
-		tmp = d->stack_a[0];
-		d->stack_a[0] = d->stack_a[1];
-		d->stack_a[1] = tmp;
+		tli_add_back(&tli, tli_new(d->stack_a[i]));
+		i++;
 	}
-	write(1, "sa\n", 3);
+	return (tli);
 }

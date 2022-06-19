@@ -6,15 +6,15 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/08 08:54:56 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/19 09:10:10 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-void    od_sb(t_data *d)
+void	od_sb(t_data *d)
 {
-	int tmp;
+	int	tmp;
 
 	if (!d->stack_b || d->size_b < 2)
 		return ;

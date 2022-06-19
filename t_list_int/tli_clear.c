@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   tli_clear.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 08:53:52 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/17 15:19:08 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:47:13 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	sa(t_data *d)
+void	tli_clear(t_tli **lst)
 {
-	int	tmp;
+	t_tli	*copyl;
 
-	if (!d->stack_a || d->size_a < 2)
+	copyl = *lst;
+	if (!*lst)
 		return ;
-	else
+	while (copyl)
 	{
-		tmp = d->stack_a[0];
-		d->stack_a[0] = d->stack_a[1];
-		d->stack_a[1] = tmp;
+		*lst = copyl->next;
+		free(copyl);
+		copyl = *lst;
 	}
-	write(1, "sa\n", 3);
+	*lst = NULL;
 }

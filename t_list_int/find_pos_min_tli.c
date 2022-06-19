@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   find_pos_min_tli.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 08:53:52 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/04 08:22:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:43:46 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	sa(t_data *d)
+t_tli	*find_pos_min_tli(t_tli *tli)
 {
-	int	tmp;
+	t_tli	*tli_pos;
+	t_tli	*tli_cpy;
 
-	if (!d->stack_a || d->size_a < 2)
-		return ;
-	else
+	tli_cpy = tli->next;
+	tli_pos = tli;
+	while (tli_cpy)
 	{
-		tmp = d->stack_a[0];
-		d->stack_a[0] = d->stack_a[1];
-		d->stack_a[1] = tmp;
+		if (tli_pos->content < tli_cpy->content)
+			tli_pos = tli_cpy;
+		tli_cpy = tli_cpy->next;
 	}
-	write(1, "sa\n", 3);
+	return (tli_pos);
 }

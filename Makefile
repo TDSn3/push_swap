@@ -6,13 +6,13 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/15 16:21:30 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/19 13:38:59 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include ./operation/Makefile
 include ./sort_five/Makefile
-include ./smart_sort_five_b/t_list_int/Makefile
+include ./t_list_int/Makefile
 include ./smart_sort_five_b/Makefile
 include ./smart_sort_five_a/Makefile
 include ./sort_five_double/Makefile
@@ -26,8 +26,8 @@ NAME = push_swap
 SRC += ./push_swap.c \
 	   ./setup_struct.c \
 	   ./tli_cpy.c \
-	   ./find_pos_max.c \
-	   ./find_pos_min.c \
+	   ./setup_tli_ten.c \
+	   ./setup_tli_five.c \
 	   ./libft/ft_strlen.c \
 	   ./libft/ft_atoi.c \
 
