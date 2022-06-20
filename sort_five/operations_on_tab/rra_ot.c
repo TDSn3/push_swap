@@ -6,13 +6,13 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:11:38 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 13:34:20 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:10:14 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-static void	rra_ot_two(int tmp, int *tab, int *tmp_two, int i);
+static void	rra_ot_two(int *tmp, int *tab, int *tmp_two, int i);
 
 int	*rra_ot(int *tab, int size)
 {
@@ -32,15 +32,15 @@ int	*rra_ot(int *tab, int size)
 			tab[i] = tab[size - 1];
 		}
 		else
-			rra_ot_two(tmp, tab, &tmp_two, i);
+			rra_ot_two(&tmp, tab, &tmp_two, i);
 		i++;
 	}
 	return (tab);
 }
 
-static void	rra_ot_two(int tmp, int *tab, int *tmp_two, int i)
+static void	rra_ot_two(int *tmp, int *tab, int *tmp_two, int i)
 {
-	tmp = tab[i];
+	*tmp = tab[i];
 	tab[i] = *tmp_two;
-	*tmp_two = tmp;
+	*tmp_two = *tmp;
 }

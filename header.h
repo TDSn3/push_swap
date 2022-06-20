@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 13:38:56 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/20 16:28:37 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int		setup_struct(t_data *d, int argc, char **argv);
 t_tli	*tli_cpy(t_tli *tli, t_tli *stock_tli_a_ten);
 void	setup_tli_ten(t_data *d);
 void	setup_tli_five(t_data *d);
+int		check_duplicate_a(t_double_lst *dl, t_data *d, int *tab);
+int		check_duplicate_b(t_double_lst *dl, t_data *d, int *tab);
 
 #endif

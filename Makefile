@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/19 13:38:59 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/20 09:18:52 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ SRC += ./push_swap.c \
 	   ./setup_struct.c \
 	   ./tli_cpy.c \
 	   ./setup_tli_ten.c \
+	   ./check_duplicate_a.c \
+	   ./check_duplicate_b.c \
 	   ./setup_tli_five.c \
 	   ./libft/ft_strlen.c \
 	   ./libft/ft_atoi.c \
