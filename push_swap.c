@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 11:00:19 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/22 09:37:11 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (setup_struct(&d, argc, argv))
 		return (1);
+	if (ascending_order_tab(d.stack_a, d.size_a) == -1)
+	{
+		clear_all(&d);
+		return (0);
+	}
 	next(&d);
 	clear_all(&d);
 	return (0);
@@ -52,6 +57,7 @@ void	next(t_data *d)
 static void	next_while(t_data *d)
 {
 	int		nb_while;
+	t_tli	*a;
 
 	nb_while = 0;
 	while (ascending_order_tab(d->stack_a, d->size_a) != -1)
@@ -61,11 +67,15 @@ static void	next_while(t_data *d)
 		setup_tli_five(d);
 		if (nb_while % 8 == 0)
 		{
-			d->firstpart_stock_a_ten = tli_cpy(d->stock_tli_a_ten, d->firstpart_stock_a_ten);
-			d->firstpart_stock_b_ten = tli_cpy(d->stock_tli_b_ten, d->firstpart_stock_b_ten);
-		}		
-		d->firstpart_stock_a_five = tli_cpy(d->stock_tli_a_five, d->firstpart_stock_a_five);
-		d->firstpart_stock_b_five = tli_cpy(d->stock_tli_b_five, d->firstpart_stock_b_five);
+			a = tli_cpy(d->stock_tli_a_ten, d->firstpart_stock_a_ten);
+			d->firstpart_stock_a_ten = a;
+			a = tli_cpy(d->stock_tli_b_ten, d->firstpart_stock_b_ten);
+			d->firstpart_stock_b_ten = a;
+		}
+		a = tli_cpy(d->stock_tli_a_five, d->firstpart_stock_a_five);
+		d->firstpart_stock_a_five = a;
+		a = tli_cpy(d->stock_tli_b_five, d->firstpart_stock_b_five);
+		d->firstpart_stock_b_five = a;
 		nb_while++;
 	}	
 }

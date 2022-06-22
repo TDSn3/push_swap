@@ -6,15 +6,15 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 07:55:30 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/07 12:50:53 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/22 07:54:47 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../header.h"
+#include "../header.h"
 
 int	pos_in_stack(int *tab, int size, int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size)

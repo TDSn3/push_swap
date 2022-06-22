@@ -6,15 +6,15 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:18:29 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/10 12:25:05 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/22 07:54:10 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../header.h"
+#include "../header.h"
 
 t_tli	*choice_better_b(t_data *d, t_tli *tli)
 {
-	int 	nb_pos;
+	int		nb_pos;
 	t_tli	*tli_cpy;
 	t_tli	*tli_stock;
 

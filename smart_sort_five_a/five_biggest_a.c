@@ -6,32 +6,34 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:18:27 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/08 13:11:36 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/22 08:01:14 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../header.h"
+#include "../header.h"
 
+static int	protect_and_ini(t_data *d, t_tli **tli, t_tli **tli_cpy, int *i);
 static int	check_stock_tli(t_tli *stock_tli_a, int content);
 
 t_tli	*five_biggest_a(t_data *d, t_tli *tli, t_tli *stock_tli_a)
 {
-	int	i;
+	int		i;
+	int		a;
+	int		b;
 	t_tli	*tli_cpy;
-	
-	i = 0;
-	tli_cpy = tli;
-	if (d->size_a == 0)
-		return (NULL);
 
+	if (protect_and_ini(d, &tli, &tli_cpy, &i))
+		return (NULL);
 	while (i < d->size_a)
 	{
 		while (tli_cpy)
 		{
-			if (tli_cpy->content < d->stack_a[i] && !check_stock_tli(stock_tli_a, d->stack_a[i]) && !check_stock_tli(tli, d->stack_a[i]))
+			a = check_stock_tli(stock_tli_a, d->stack_a[i]);
+			b = check_stock_tli(tli, d->stack_a[i]);
+			if (tli_cpy->content < d->stack_a[i] && !a && !b)
 			{
 				find_pos_max_tli(tli)->content = d->stack_a[i];
-				break;
+				break ;
 			}
 			tli_cpy = tli_cpy->next;
 		}
@@ -39,6 +41,15 @@ t_tli	*five_biggest_a(t_data *d, t_tli *tli, t_tli *stock_tli_a)
 		i++;
 	}
 	return (tli);
+}
+
+static int	protect_and_ini(t_data *d, t_tli **tli, t_tli **tli_cpy, int *i)
+{
+	*i = 0;
+	*tli_cpy = *tli;
+	if (d->size_a == 0)
+		return (1);
+	return (0);
 }
 
 static int	check_stock_tli(t_tli *stock_tli_a, int content)
