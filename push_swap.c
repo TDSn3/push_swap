@@ -6,22 +6,37 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/22 09:37:11 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:42:41 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 void		next(t_data *d);
-static void	clear_all(t_data *d);
 static void	next_while(t_data *d);
+static void	next_while_p_two(t_data *d, int *b, int *c);
 
 int	main(int argc, char *argv[])
 {
 	t_data	d;
 
+
+
+
+//	for(int i = 0; argv[i]; i++)
+//		printf("->%s | len: %zu\n", argv[i], ft_strlen(argv[i]));
+//	printf("argc = %d", argc);
+//	printf("\nstack len : %zu\n", stack_len(argc, argv));
+
+	argc_str_transform(&d, argc, argv);
+
 	if (argc < 2)
 		return (0);
+	if (!stack_len(argc, argv))
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	if (setup_struct(&d, argc, argv))
 		return (1);
 	if (ascending_order_tab(d.stack_a, d.size_a) == -1)
@@ -30,6 +45,8 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	next(&d);
+//	for (int i = 0; i < d.size_a; i++)
+//		printf(" %d", d.stack_a[i]);
 	clear_all(&d);
 	return (0);
 }
@@ -58,9 +75,13 @@ static void	next_while(t_data *d)
 {
 	int		nb_while;
 	t_tli	*a;
+	int		b;
+	int		c;
 
 	nb_while = 0;
-	while (ascending_order_tab(d->stack_a, d->size_a) != -1)
+	b = ascending_order_tab(d->stack_a, d->size_a);
+	c = descending_order_tab(d->stack_b, d->size_b);
+	while (b != -1 || c != -1)
 	{
 		if (nb_while % 8 == 0)
 			setup_tli_ten(d);
@@ -72,24 +93,19 @@ static void	next_while(t_data *d)
 			a = tli_cpy(d->stock_tli_b_ten, d->firstpart_stock_b_ten);
 			d->firstpart_stock_b_ten = a;
 		}
-		a = tli_cpy(d->stock_tli_a_five, d->firstpart_stock_a_five);
-		d->firstpart_stock_a_five = a;
-		a = tli_cpy(d->stock_tli_b_five, d->firstpart_stock_b_five);
-		d->firstpart_stock_b_five = a;
+		next_while_p_two(d, &b, &c);
 		nb_while++;
-	}	
+	}
 }
 
-static void	clear_all(t_data *d)
+static void	next_while_p_two(t_data *d, int *b, int *c)
 {
-	tli_clear(&d->stock_tli_a_ten);
-	tli_clear(&d->firstpart_stock_a_ten);
-	tli_clear(&d->stock_tli_b_ten);
-	tli_clear(&d->firstpart_stock_b_ten);
-	tli_clear(&d->stock_tli_a_five);
-	tli_clear(&d->firstpart_stock_a_five);
-	tli_clear(&d->stock_tli_b_five);
-	tli_clear(&d->firstpart_stock_b_five);
-	free(d->stack_a);
-	free(d->stack_b);
+	t_tli	*a;
+
+	a = tli_cpy(d->stock_tli_a_five, d->firstpart_stock_a_five);
+	d->firstpart_stock_a_five = a;
+	a = tli_cpy(d->stock_tli_b_five, d->firstpart_stock_b_five);
+	d->firstpart_stock_b_five = a;
+	*b = ascending_order_tab(d->stack_a, d->size_a);
+	*c = descending_order_tab(d->stack_b, d->size_b);
 }
