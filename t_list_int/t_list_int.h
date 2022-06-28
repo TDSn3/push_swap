@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/10 13:24:40 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:11:45 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	tli_clear(t_tli **lst);
 t_tli	*find_pos_max_tli(t_tli *tli);
 t_tli	*find_pos_min_tli(t_tli *tli);
 void	tli_clear_one(t_tli **tli, int content);
+t_tli	*tli_setup_b_forty(t_data *d, t_tli *tli, t_tli *stock_tli_b);
+t_tli	*tli_setup_a_forty(t_data *d, t_tli *tli, t_tli *stock_tli_a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:03:17 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 09:43:58 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:22:22 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_data
 	int		size_a;
 	int		*stack_b;
 	int		size_b;
+	int		stock_size_stack;
 	t_tli	*tli_a_ten;
 	t_tli	*tli_a_five;
 	t_tli	*tli_b_ten;

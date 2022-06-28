@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/22 15:28:43 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:16:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ int		check_duplicate_b(t_double_lst *dl, t_data *d, int *tab);
 void	clear_all(t_data *d);
 size_t	stack_len(int argc, char *argv[]);
 int	    argc_str_transform(t_data *d, int argc, char **argv);
+int     if_argv_str(int argc, char **argv);
+void	setup_tli_forty(t_data *d);
 
 #endif

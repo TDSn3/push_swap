@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tli_setup_a_ten.c                                  :+:      :+:    :+:   */
+/*   tli_setup_b_forty.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:09:14 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/27 22:28:27 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:10:38 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-static int	check_stock_tli(t_tli *stock_tli_a, int content);
+static int	check_stock_tli(t_tli *stock_tli_b, int content);
 
-t_tli	*tli_setup_a_ten(t_data *d, t_tli *tli, t_tli *stock_tli_a)
+t_tli	*tli_setup_b_forty(t_data *d, t_tli *tli, t_tli *stock_tli_b)
 {
 	int		i;
 	int		j;
 	int		size;
 
-	if (d->size_a == 0)
+	if (d->size_b == 0)
 		return (NULL);
-	if (d->size_a - tli_size(stock_tli_a) > 10)
-		size = 10;
+	if (d->size_b - tli_size(stock_tli_b) > 40)
+		size = 40;
 	else
-		size = d->size_a - tli_size(stock_tli_a);
+		size = d->size_b - tli_size(stock_tli_b);
 	if (size < 1)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (j < size && i < d->size_a)
+	while (j < size && i < d->size_b)
 	{
-		if (!check_stock_tli(stock_tli_a, d->stack_a[i]))
+		if (!check_stock_tli(stock_tli_b, d->stack_b[i]))
 		{
-			tli_add_back(&tli, tli_new(d->stack_a[i]));
+			tli_add_back(&tli, tli_new(d->stack_b[i]));
 			j++;
 		}
 		i++;
@@ -42,15 +42,15 @@ t_tli	*tli_setup_a_ten(t_data *d, t_tli *tli, t_tli *stock_tli_a)
 	return (tli);
 }
 
-static int	check_stock_tli(t_tli *stock_tli_a, int content)
+static int	check_stock_tli(t_tli *stock_tli_b, int content)
 {
-	if (!stock_tli_a)
+	if (!stock_tli_b)
 		return (0);
-	while (stock_tli_a)
+	while (stock_tli_b)
 	{
-		if (stock_tli_a->content == content)
+		if (stock_tli_b->content == content)
 			return (1);
-		stock_tli_a = stock_tli_a->next;
+		stock_tli_b = stock_tli_b->next;
 	}
 	return (0);
 }

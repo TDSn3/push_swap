@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:09:14 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/19 11:44:16 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:28:31 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_tli	*tli_setup_b_ten(t_data *d, t_tli *tli, t_tli *stock_tli_b)
 
 	if (d->size_b == 0)
 		return (NULL);
-	if (d->size_b - tli_size(stock_tli_b) > 40)
-		size = 40;
+	if (d->size_b - tli_size(stock_tli_b) > 10)
+		size = 10;
 	else
 		size = d->size_b - tli_size(stock_tli_b);
 	if (size < 1)

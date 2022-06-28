@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tli_setup_a_ten.c                                  :+:      :+:    :+:   */
+/*   tli_setup_a_forty.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:09:14 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/27 22:28:27 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:09:58 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	check_stock_tli(t_tli *stock_tli_a, int content);
 
-t_tli	*tli_setup_a_ten(t_data *d, t_tli *tli, t_tli *stock_tli_a)
+t_tli	*tli_setup_a_forty(t_data *d, t_tli *tli, t_tli *stock_tli_a)
 {
 	int		i;
 	int		j;
@@ -22,8 +22,8 @@ t_tli	*tli_setup_a_ten(t_data *d, t_tli *tli, t_tli *stock_tli_a)
 
 	if (d->size_a == 0)
 		return (NULL);
-	if (d->size_a - tli_size(stock_tli_a) > 10)
-		size = 10;
+	if (d->size_a - tli_size(stock_tli_a) > 40)
+		size = 40;
 	else
 		size = d->size_a - tli_size(stock_tli_a);
 	if (size < 1)

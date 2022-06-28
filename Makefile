@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/22 15:28:54 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/27 22:17:02 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SRC += ./push_swap.c \
 	   ./libft/ft_atoi.c \
 	   ./stack_len.c \
 	   ./argc_str_transform.c \
+	   ./if_argv_str.c \
+	   ./setup_tli_forty.c \
 
 all: $(NAME)
 

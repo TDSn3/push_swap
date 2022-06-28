@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 12:03:32 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/19 09:36:38 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/27 22:12:21 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,5 +23,7 @@ SRC += ./t_list_int/tli_new.c \
 	   ./t_list_int/tli_clear_one.c \
 	   ./t_list_int/find_pos_max_tli.c \
 	   ./t_list_int/find_pos_min_tli.c \
+	   ./t_list_int/tli_setup_b_forty.c \
+	   ./t_list_int/tli_setup_a_forty.c \
 
 all: $(SRC)
