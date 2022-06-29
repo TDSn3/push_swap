@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   next_while_run_two.c                               :+:      :+:    :+:   */
+/*   check_int_max.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 19:50:56 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/29 08:18:53 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/29 08:46:40 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/29 09:01:22 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	next_while_run_two(t_data *d, int nb_while)
+int	check_int_max(char **argv, int i, int j)
 {
-	t_tli	*a;
-
-	if (d->stock_size_stack > 150)
-	{
-		if (nb_while % 8 == 0)
-			setup_tli_forty(d);
-		setup_tli_five(d);
-		if (nb_while % 8 == 0)
-		{
-			a = tli_cpy(d->stock_tli_a_ten, d->firstpart_stock_a_ten);
-			d->firstpart_stock_a_ten = a;
-			a = tli_cpy(d->stock_tli_b_ten, d->firstpart_stock_b_ten);
-			d->firstpart_stock_b_ten = a;
-		}
-	}
+	if (j != 9 && !argv[i][9])
+		return (0);
+	if (argv[i][0] >= '2')
+		if (argv[i][1] >= '1')
+			if (argv[i][2] >= '4')
+				if (argv[i][3] >= '7')
+					if (argv[i][4] >= '4')
+						if (argv[i][5] >= '8')
+							if (argv[i][6] >= '3')
+								if (argv[i][7] >= '6')
+									if (argv[i][8] >= '4')
+										if (argv[i][9] > '7')
+											return (1);
+	return (0);
 }

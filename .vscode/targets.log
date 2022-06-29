@@ -1,0 +1,1076 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+ 
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jun 29 08:58:52 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# makefile (from 'Makefile', line 26)
+SRC = ./operation/sa.c ./operation/sb.c ./operation/ss.c ./operation/pa.c ./operation/pb.c ./operation/ra.c ./operation/rb.c ./operation/rr.c ./operation/rra.c ./operation/rrb.c ./operation/rrr.c ./operation/oper_double/od_sa.c ./operation/oper_double/od_sb.c ./operation/oper_double/od_pa.c ./operation/oper_double/od_pb.c ./operation/oper_double/od_ra.c ./operation/oper_double/od_rb.c ./operation/oper_double/od_rra.c ./operation/oper_double/od_rrb.c  ./sort_five/sort_five.c ./sort_five/if_sorted.c ./sort_five/make_all_oper.c ./sort_five/ascending_order_tab.c ./sort_five/descending_order_tab.c ./sort_five/dup_tab.c ./sort_five/double_lst/dl_add_back.c ./sort_five/double_lst/dl_last.c ./sort_five/double_lst/dl_new.c ./sort_five/double_lst/sl_add_back.c ./sort_five/double_lst/sl_last.c ./sort_five/double_lst/sl_new.c ./sort_five/double_lst/sl_link.c ./sort_five/double_lst/dl_clear.c ./sort_five/double_lst/sl_int_clear.c ./sort_five/operations_dupp_tab/sa_dt.c ./sort_five/operations_dupp_tab/ra_dt.c ./sort_five/operations_dupp_tab/rra_dt.c ./sort_five/operations_on_tab/sa_ot.c ./sort_five/operations_on_tab/ra_ot.c ./sort_five/operations_on_tab/rra_ot.c ./sort_five/sort_first_five_b/if_sorted_b.c ./sort_five/sort_first_five_b/make_all_oper_b.c ./sort_five/sort_first_five_b/sort_first_five_b.c ./sort_five/sort_first_five_a/if_sorted_a.c ./sort_five/sort_first_five_a/make_all_oper_a.c ./sort_five/sort_first_five_a/sort_first_five_a.c  ./t_list_int/tli_new.c ./t_list_int/tli_setup_a_five.c ./t_list_int/tli_setup_a_ten.c ./t_list_int/tli_setup_b_five.c ./t_list_int/tli_setup_b_ten.c ./t_list_int/tli_setup_b_half_a.c ./t_list_int/tli_add_back.c ./t_list_int/tli_size.c ./t_list_int/tli_last.c ./t_list_int/tli_clear.c ./t_list_int/tli_clear_one.c ./t_list_int/find_pos_max_tli.c ./t_list_int/find_pos_min_tli.c ./t_list_int/tli_setup_b_forty.c ./t_list_int/tli_setup_a_forty.c  ./smart_sort_five_b/choice_better_give_nb.c ./smart_sort_five_b/choice_better_give_nb_b.c ./smart_sort_five_b/choice_better.c ./smart_sort_five_b/choice_better_b.c ./smart_sort_five_b/five_smaller_a.c ./smart_sort_five_b/five_smaller_b.c ./smart_sort_five_b/pos_in_stack.c ./smart_sort_five_b/rotate_choice.c ./smart_sort_five_b/up_smaller_tli_b.c  ./smart_sort_five_a/five_biggest_a.c ./smart_sort_five_a/up_biggest_lti_a.c  ./sort_five_double/sfd_a/sfd_if_sorted_a.c ./sort_five_double/sfd_a/sfd_make_all_oper_a.c ./sort_five_double/sfd_a/sfd_sort_first_five_a.c ./sort_five_double/sfd_b/sfd_if_sorted_b.c ./sort_five_double/sfd_b/sfd_make_all_oper_b.c ./sort_five_double/sfd_b/sfd_sort_first_five_b.c ./sort_five_double/sort_five_double.c ./sort_five_double/while_for_sfd.c  ./push_swap.c ./setup_struct.c ./tli_cpy.c ./setup_tli_ten.c ./check_duplicate_a.c ./check_duplicate_b.c ./setup_tli_five.c ./clear_all.c ./libft/ft_strlen.c ./libft/ft_atoi.c ./stack_len.c ./setup_tli_forty.c ./next_while_run_one.c ./next_while_run_two.c ./check_int_max.c ./check_int_min.c ./ss_cargv_part_two.c 
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /mnt/nfs/homes/tda-silv/.Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /mnt/nfs/homes/tda-silv/Desktop/push_swap
+# makefile
+SHELL = /bin/sh
+# environment
+GDM_LANG = en
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/share/code/code
+# makefile (from 'Makefile', line 22)
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+# environment
+JOURNAL_STREAM = 9:98212
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'sort_five_double/Makefile', line 1)
+MAKEFILE_LIST :=  Makefile operation/Makefile sort_five/Makefile t_list_int/Makefile smart_sort_five_b/Makefile smart_sort_five_a/Makefile sort_five_double/Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/tda-silv/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101536/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+MANAGERPID = 16846
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101536/vscode-ipc-9c4c236e-3524-495d-a3e3-f3b14ca18d3c.sock
+# environment
+VSCODE_CWD = /mnt/nfs/homes/tda-silv
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_101536_9dLgg5
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /mnt/nfs/homes/tda-silv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/101536/gnupg/S.gpg-agent:0:1
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+SESSION_MANAGER = local/e3r11p16.42.fr:@/tmp/.ICE-unix/17346,unix/e3r11p16.42.fr:/tmp/.ICE-unix/17346
+# environment
+XDG_RUNTIME_DIR = /run/user/101536
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 0c57fd1935464aef8512b0db4d5f1e61
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/tda-silv
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/101536/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 18968
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /mnt/nfs/homes/tda-silv/Desktop/push_swap
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 17310
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /mnt/nfs/homes/tda-silv
+# environment
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/tda-silv/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+# environment
+LOGNAME = tda-silv
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /mnt/nfs/homes/tda-silv/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 20)
+CC = clang
+# environment
+IM_CONFIG_PHASE = 1
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = tda-silv
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/nfs/homes/tda-silv
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/101536/vscode-6a6f1eb9-1.68.1-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 24)
+NAME = push_swap
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+DOCKER_HOST = unix:///run/user/101536/docker.sock
+# environment
+VSCODE_PID = 18968
+# variable set hash-table stats:
+# Load=111/1024=11%, Rehash=0, Collisions=15/175=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 55, inode 197233221): 31 files, no impossibilities.
+
+# 31 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+setup_tli_forty.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:45.527865743
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/sb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:42.563861661
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_setup_a_forty.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:58.607883792
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/operations_dupp_tab/sa_dt.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:52.023874699
+#  File has been updated.
+#  Successfully updated.
+
+ 
+# Not a target:
+operation/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:39.0318568
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_pa.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:39.34385723
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/dl_last.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:49.927871808
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+setup_tli_five.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:45.375865534
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/rra.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:41.979860857
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_setup_a_five.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:58.467883599
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/sfd_a/sfd_make_all_oper_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:54.947878736
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+push_swap.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:28:35.488605806
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/if_sorted.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:51.207873574
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_new.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:58.331883411
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/choice_better_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:47.307868195
+#  File has been updated.
+#  Successfully updated.
+
+all: operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c t_list_int/tli_new.c t_list_int/tli_setup_a_five.c t_list_int/tli_setup_a_ten.c t_list_int/tli_setup_b_five.c t_list_int/tli_setup_b_ten.c t_list_int/tli_setup_b_half_a.c t_list_int/tli_add_back.c t_list_int/tli_size.c t_list_int/tli_last.c t_list_int/tli_clear.c t_list_int/tli_clear_one.c t_list_int/find_pos_max_tli.c t_list_int/find_pos_min_tli.c t_list_int/tli_setup_b_forty.c t_list_int/tli_setup_a_forty.c operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c t_list_int/tli_new.c t_list_int/tli_setup_a_five.c t_list_int/tli_setup_a_ten.c t_list_int/tli_setup_b_five.c t_list_int/tli_setup_b_ten.c t_list_int/tli_setup_b_half_a.c t_list_int/tli_add_back.c t_list_int/tli_size.c t_list_int/tli_last.c t_list_int/tli_clear.c t_list_int/tli_clear_one.c t_list_int/find_pos_max_tli.c t_list_int/find_pos_min_tli.c t_list_int/tli_setup_b_forty.c t_list_int/tli_setup_a_forty.c smart_sort_five_b/choice_better_give_nb.c smart_sort_five_b/choice_better_give_nb_b.c smart_sort_five_b/choice_better.c smart_sort_five_b/choice_better_b.c smart_sort_five_b/five_smaller_a.c smart_sort_five_b/five_smaller_b.c smart_sort_five_b/pos_in_stack.c smart_sort_five_b/rotate_choice.c smart_sort_five_b/up_smaller_tli_b.c operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c t_list_int/tli_new.c t_list_int/tli_setup_a_five.c t_list_int/tli_setup_a_ten.c t_list_int/tli_setup_b_five.c t_list_int/tli_setup_b_ten.c t_list_int/tli_setup_b_half_a.c t_list_int/tli_add_back.c t_list_int/tli_size.c t_list_int/tli_last.c t_list_int/tli_clear.c t_list_int/tli_clear_one.c t_list_int/find_pos_max_tli.c t_list_int/find_pos_min_tli.c t_list_int/tli_setup_b_forty.c t_list_int/tli_setup_a_forty.c smart_sort_five_b/choice_better_give_nb.c smart_sort_five_b/choice_better_give_nb_b.c smart_sort_five_b/choice_better.c smart_sort_five_b/choice_better_b.c smart_sort_five_b/five_smaller_a.c smart_sort_five_b/five_smaller_b.c smart_sort_five_b/pos_in_stack.c smart_sort_five_b/rotate_choice.c smart_sort_five_b/up_smaller_tli_b.c smart_sort_five_a/five_biggest_a.c smart_sort_five_a/up_biggest_lti_a.c operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c t_list_int/tli_new.c t_list_int/tli_setup_a_five.c t_list_int/tli_setup_a_ten.c t_list_int/tli_setup_b_five.c t_list_int/tli_setup_b_ten.c t_list_int/tli_setup_b_half_a.c t_list_int/tli_add_back.c t_list_int/tli_size.c t_list_int/tli_last.c t_list_int/tli_clear.c t_list_int/tli_clear_one.c t_list_int/find_pos_max_tli.c t_list_int/find_pos_min_tli.c t_list_int/tli_setup_b_forty.c t_list_int/tli_setup_a_forty.c smart_sort_five_b/choice_better_give_nb.c smart_sort_five_b/choice_better_give_nb_b.c smart_sort_five_b/choice_better.c smart_sort_five_b/choice_better_b.c smart_sort_five_b/five_smaller_a.c smart_sort_five_b/five_smaller_b.c smart_sort_five_b/pos_in_stack.c smart_sort_five_b/rotate_choice.c smart_sort_five_b/up_smaller_tli_b.c smart_sort_five_a/five_biggest_a.c smart_sort_five_a/up_biggest_lti_a.c sort_five_double/sfd_a/sfd_if_sorted_a.c sort_five_double/sfd_a/sfd_make_all_oper_a.c sort_five_double/sfd_a/sfd_sort_first_five_a.c sort_five_double/sfd_b/sfd_if_sorted_b.c sort_five_double/sfd_b/sfd_make_all_oper_b.c sort_five_double/sfd_b/sfd_sort_first_five_b.c sort_five_double/sort_five_double.c sort_five_double/while_for_sfd.c push_swap
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+
+# Not a target:
+t_list_int/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:56.947881498
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sort_five/operations_on_tab/rra_ot.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:52.511875373
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/choice_better_give_nb_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:47.65186867
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/sort_first_five_b/make_all_oper_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:53.679876985
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_clear_one.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:58.031882996
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_setup_b_ten.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:59.399884887
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:46.979867744
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/sort_five_double.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:56.043880249
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_size.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:59.559885108
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_setup_b_forty.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:59.059884417
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/sort_first_five_b/sort_first_five_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:53.8358772
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_setup_b_five.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:58.903884202
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_pb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:39.511857461
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/sort_first_five_a/if_sorted_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:52.931875952
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+operation/rrb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:42.151861094
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:58:45.965382945
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/pos_in_stack.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:48.191869414
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+check_int_min.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:49:11.973167482
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/five_smaller_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:48.04386921
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/choice_better.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:47.135867958
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+check_duplicate_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:37.451854629
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_ra.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:39.667857676
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+libft/ft_atoi.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:38.527856107
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/make_all_oper.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:51.355873778
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/dl_new.c:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-06-28 19:06:50.055871984
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/rotate_choice.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:48.407869712
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+setup_struct.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:49:24.121172144
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+next_while_run_one.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:18:46.216353231
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/operations_dupp_tab/rra_dt.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:51.767874346
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/sfd_b/sfd_make_all_oper_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:55.603879641
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/five_smaller_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:47.803868879
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/pa.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:41.091859635
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/ss.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:42.683861826
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:54.359877924
+#  File has been updated.
+#  Successfully updated.
+
+fclean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 53):
+	rm -f $(NAME)
+
+# Not a target:
+libft/ft_strlen.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:38.687856328
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/sl_add_back.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:50.187872166
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/sfd_a/sfd_sort_first_five_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:55.103878951
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+check_duplicate_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:37.579854804
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/up_smaller_tli_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:48.843870313
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+tli_cpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:59.735885351
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/sfd_a/sfd_if_sorted_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:54.67587836
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_rb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:39.831857902
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/while_for_sfd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:56.479880851
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+clear_all.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:38.019855409
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+operation/ra.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:41.383860036
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_add_back.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:57.611882416
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+stack_len.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:19:33.332368775
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/sort_five.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:53.991877416
+#  File has been updated.
+#  Successfully updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+sort_five/double_lst/sl_last.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:50.507872608
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+operation/pb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:41.239859839
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:49.031870572
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_sa.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:40.623858991
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/operations_on_tab/ra_ot.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:52.263875031
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/rrr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:42.291861287
+#  File has been updated.
+#  Successfully updated.
+
+push_swap: operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c t_list_int/tli_new.c t_list_int/tli_setup_a_five.c t_list_int/tli_setup_a_ten.c t_list_int/tli_setup_b_five.c t_list_int/tli_setup_b_ten.c t_list_int/tli_setup_b_half_a.c t_list_int/tli_add_back.c t_list_int/tli_size.c t_list_int/tli_last.c t_list_int/tli_clear.c t_list_int/tli_clear_one.c t_list_int/find_pos_max_tli.c t_list_int/find_pos_min_tli.c t_list_int/tli_setup_b_forty.c t_list_int/tli_setup_a_forty.c smart_sort_five_b/choice_better_give_nb.c smart_sort_five_b/choice_better_give_nb_b.c smart_sort_five_b/choice_better.c smart_sort_five_b/choice_better_b.c smart_sort_five_b/five_smaller_a.c smart_sort_five_b/five_smaller_b.c smart_sort_five_b/pos_in_stack.c smart_sort_five_b/rotate_choice.c smart_sort_five_b/up_smaller_tli_b.c smart_sort_five_a/five_biggest_a.c smart_sort_five_a/up_biggest_lti_a.c sort_five_double/sfd_a/sfd_if_sorted_a.c sort_five_double/sfd_a/sfd_make_all_oper_a.c sort_five_double/sfd_a/sfd_sort_first_five_a.c sort_five_double/sfd_b/sfd_if_sorted_b.c sort_five_double/sfd_b/sfd_make_all_oper_b.c sort_five_double/sfd_b/sfd_sort_first_five_b.c sort_five_double/sort_five_double.c sort_five_double/while_for_sfd.c push_swap.c setup_struct.c tli_cpy.c setup_tli_ten.c check_duplicate_a.c check_duplicate_b.c setup_tli_five.c clear_all.c libft/ft_strlen.c libft/ft_atoi.c stack_len.c setup_tli_forty.c next_while_run_one.c next_while_run_two.c check_int_max.c check_int_min.c ss_cargv_part_two.c
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  Last modified 2022-06-29 08:33:58.908781478
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := push_swap
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c t_list_int/tli_new.c t_list_int/tli_setup_a_five.c t_list_int/tli_setup_a_ten.c t_list_int/tli_setup_b_five.c t_list_int/tli_setup_b_ten.c t_list_int/tli_setup_b_half_a.c t_list_int/tli_add_back.c t_list_int/tli_size.c t_list_int/tli_last.c t_list_int/tli_clear.c t_list_int/tli_clear_one.c t_list_int/find_pos_max_tli.c t_list_int/find_pos_min_tli.c t_list_int/tli_setup_b_forty.c t_list_int/tli_setup_a_forty.c smart_sort_five_b/choice_better_give_nb.c smart_sort_five_b/choice_better_give_nb_b.c smart_sort_five_b/choice_better.c smart_sort_five_b/choice_better_b.c smart_sort_five_b/five_smaller_a.c smart_sort_five_b/five_smaller_b.c smart_sort_five_b/pos_in_stack.c smart_sort_five_b/rotate_choice.c smart_sort_five_b/up_smaller_tli_b.c smart_sort_five_a/five_biggest_a.c smart_sort_five_a/up_biggest_lti_a.c sort_five_double/sfd_a/sfd_if_sorted_a.c sort_five_double/sfd_a/sfd_make_all_oper_a.c sort_five_double/sfd_a/sfd_sort_first_five_a.c sort_five_double/sfd_b/sfd_if_sorted_b.c sort_five_double/sfd_b/sfd_make_all_oper_b.c sort_five_double/sfd_b/sfd_sort_first_five_b.c sort_five_double/sort_five_double.c sort_five_double/while_for_sfd.c push_swap.c setup_struct.c tli_cpy.c setup_tli_ten.c check_duplicate_a.c check_duplicate_b.c setup_tli_five.c clear_all.c libft/ft_strlen.c libft/ft_atoi.c stack_len.c setup_tli_forty.c next_while_run_one.c next_while_run_two.c check_int_max.c check_int_min.c ss_cargv_part_two.c
+# automatic
+# | := 
+# automatic
+# < := operation/sa.c
+# automatic
+# ^ := operation/sa.c operation/sb.c operation/ss.c operation/pa.c operation/pb.c operation/ra.c operation/rb.c operation/rr.c operation/rra.c operation/rrb.c operation/rrr.c operation/oper_double/od_sa.c operation/oper_double/od_sb.c operation/oper_double/od_pa.c operation/oper_double/od_pb.c operation/oper_double/od_ra.c operation/oper_double/od_rb.c operation/oper_double/od_rra.c operation/oper_double/od_rrb.c sort_five/sort_five.c sort_five/if_sorted.c sort_five/make_all_oper.c sort_five/ascending_order_tab.c sort_five/descending_order_tab.c sort_five/dup_tab.c sort_five/double_lst/dl_add_back.c sort_five/double_lst/dl_last.c sort_five/double_lst/dl_new.c sort_five/double_lst/sl_add_back.c sort_five/double_lst/sl_last.c sort_five/double_lst/sl_new.c sort_five/double_lst/sl_link.c sort_five/double_lst/dl_clear.c sort_five/double_lst/sl_int_clear.c sort_five/operations_dupp_tab/sa_dt.c sort_five/operations_dupp_tab/ra_dt.c sort_five/operations_dupp_tab/rra_dt.c sort_five/operations_on_tab/sa_ot.c sort_five/operations_on_tab/ra_ot.c sort_five/operations_on_tab/rra_ot.c sort_five/sort_first_five_b/if_sorted_b.c sort_five/sort_first_five_b/make_all_oper_b.c sort_five/sort_first_five_b/sort_first_five_b.c sort_five/sort_first_five_a/if_sorted_a.c sort_five/sort_first_five_a/make_all_oper_a.c sort_five/sort_first_five_a/sort_first_five_a.c t_list_int/tli_new.c t_list_int/tli_setup_a_five.c t_list_int/tli_setup_a_ten.c t_list_int/tli_setup_b_five.c t_list_int/tli_setup_b_ten.c t_list_int/tli_setup_b_half_a.c t_list_int/tli_add_back.c t_list_int/tli_size.c t_list_int/tli_last.c t_list_int/tli_clear.c t_list_int/tli_clear_one.c t_list_int/find_pos_max_tli.c t_list_int/find_pos_min_tli.c t_list_int/tli_setup_b_forty.c t_list_int/tli_setup_a_forty.c smart_sort_five_b/choice_better_give_nb.c smart_sort_five_b/choice_better_give_nb_b.c smart_sort_five_b/choice_better.c smart_sort_five_b/choice_better_b.c smart_sort_five_b/five_smaller_a.c smart_sort_five_b/five_smaller_b.c smart_sort_five_b/pos_in_stack.c smart_sort_five_b/rotate_choice.c smart_sort_five_b/up_smaller_tli_b.c smart_sort_five_a/five_biggest_a.c smart_sort_five_a/up_biggest_lti_a.c sort_five_double/sfd_a/sfd_if_sorted_a.c sort_five_double/sfd_a/sfd_make_all_oper_a.c sort_five_double/sfd_a/sfd_sort_first_five_a.c sort_five_double/sfd_b/sfd_if_sorted_b.c sort_five_double/sfd_b/sfd_make_all_oper_b.c sort_five_double/sfd_b/sfd_sort_first_five_b.c sort_five_double/sort_five_double.c sort_five_double/while_for_sfd.c push_swap.c setup_struct.c tli_cpy.c setup_tli_ten.c check_duplicate_a.c check_duplicate_b.c setup_tli_five.c clear_all.c libft/ft_strlen.c libft/ft_atoi.c stack_len.c setup_tli_forty.c next_while_run_one.c next_while_run_two.c check_int_max.c check_int_min.c ss_cargv_part_two.c
+# automatic
+# ? := setup_struct.c check_int_max.c check_int_min.c ss_cargv_part_two.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+#  recipe to execute (from 'Makefile', line 47):
+	$(CC) $(CFLAGS) -o $(NAME) $^
+
+# Not a target:
+t_list_int/tli_clear.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:57.787882659
+ 
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_rra.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:40.155858347
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_b/choice_better_give_nb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:47.475868428
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/sort_first_five_a/make_all_oper_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:53.095876179
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/sa.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:42.431861479
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_a/up_biggest_lti_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:46.711867375
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/descending_order_tab.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:49.367871035
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ss_cargv_part_two.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:58:16.761372151
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/sl_int_clear.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:50.331872366
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/rr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:41.707860483
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/rb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:41.535860246
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/operations_dupp_tab/ra_dt.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:51.535874026
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/sort_first_five_a/sort_first_five_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:53.2558764
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/dl_add_back.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:49.547871284
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/find_pos_max_tli.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:57.103881713
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/sfd_b/sfd_sort_first_five_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:55.823879946
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/operations_on_tab/sa_ot.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:52.667875589
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/find_pos_min_tli.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:57.263881935
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/sl_link.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:50.643872796
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five_double/sfd_b/sfd_if_sorted_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:55.407879371
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_last.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:58.187883212
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_sb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:40.791859222
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_a/five_biggest_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:46.235866718
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/dup_tab.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:51.055873364
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+check_int_max.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:47:18.697123683
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+next_while_run_two.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 08:18:53.620355676
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_setup_b_half_a.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:59.207884621
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/sort_first_five_b/if_sorted_b.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:53.519876765
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+setup_tli_ten.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:45.763866068
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/dl_clear.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:49.723871527
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/double_lst/sl_new.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:50.87187311
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+t_list_int/tli_setup_a_ten.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:58.747883985
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+operation/oper_double/od_rrb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:40.351858617
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+smart_sort_five_a/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:45.97586636
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+sort_five/ascending_order_tab.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:06:49.203870809
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=112/1024=11%, Rehash=0, Collisions=79/589=13%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 128 / storage = 3157 B / avg = 24 B
+# current buf: size = 8162 B / used = 3157 B / count = 128 / avg = 24 B
+
+# strcache performance: lookups = 527 / hit rate = 75%
+# hash-table stats:
+# Load=128/8192=2%, Rehash=0, Collisions=22/527=4%
+# Finished Make data base on Wed Jun 29 08:58:52 2022
+
+ 

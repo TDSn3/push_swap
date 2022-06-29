@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/28 19:54:52 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/29 08:58:45 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,12 @@ SRC += ./push_swap.c \
 	   ./libft/ft_strlen.c \
 	   ./libft/ft_atoi.c \
 	   ./stack_len.c \
-	   ./argc_str_transform.c \
-	   ./if_argv_str.c \
 	   ./setup_tli_forty.c \
 	   ./next_while_run_one.c \
 	   ./next_while_run_two.c \
+	   ./check_int_max.c \
+	   ./check_int_min.c \
+	   ./ss_cargv_part_two.c \
 
 all: $(NAME)
 

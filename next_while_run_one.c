@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 19:27:09 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/28 19:41:59 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/29 08:18:46 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	next_while_run_one(t_data *d, int nb_while)
 {
 	t_tli	*a;
-	
+
 	if (d->stock_size_stack <= 50)
 		setup_tli_five(d);
 	if (d->stock_size_stack <= 150 && d->stock_size_stack > 50)

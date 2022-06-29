@@ -6,16 +6,19 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:30:14 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/22 15:43:33 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/29 09:18:16 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
+static int	part_two(char **argv, int i, int *j, size_t *len);
+
 size_t	stack_len(int argc, char *argv[])
 {
-	int i;
-	int	j;
+	int		i;
+	int		j;
+	int		stock;
 	size_t	len;
 
 	i = 1;
@@ -27,25 +30,38 @@ size_t	stack_len(int argc, char *argv[])
 	{
 		while (argv[i][j])
 		{
-			if (argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-' && (argv[i][j] < '0' || argv[i][j] > '9'))
+			stock = part_two(argv, i, &j, &len);
+			if (stock == -1)
 				return (0);
-			if (argv[i][j] == ' ')
-			{
-				while (argv[i][j] && argv[i][j] == ' ')
-					j++;
+			else if (stock == 1)
 				continue ;
-			}
-			if (argv[i][j] >= '0' && argv[i][j] <= '9')
-			{
-				len++;
-				while (argv[i][j] && argv[i][j] >= '0' && argv[i][j] <= '9')
-					j++;
-				continue ;
-			}
-			j++;
 		}
 		j = 0;
 		i++;
 	}
 	return (len);
+}
+
+static int	part_two(char **argv, int i, int *j, size_t *len)
+{
+	if (argv[i][*j] != ' ')
+		if (argv[i][*j] != '+')
+			if (argv[i][*j] != '-')
+				if ((argv[i][*j] < '0' || argv[i][*j] > '9'))
+					return (-1);
+	if (argv[i][*j] == ' ')
+	{
+		while (argv[i][*j] && argv[i][*j] == ' ')
+			*j += 1;
+		return (1);
+	}
+	if (argv[i][*j] >= '0' && argv[i][*j] <= '9')
+	{
+		*len += 1;
+		while (argv[i][*j] && argv[i][*j] >= '0' && argv[i][*j] <= '9')
+			j++;
+		return (1);
+	}
+	*j += 1;
+	return (0);
 }
