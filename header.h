@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/29 08:58:28 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:48:48 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void	next_while_run_two(t_data *d, int nb_while);
 int		check_int_max(char **argv, int i, int j);
 int		check_int_min(char **argv, int i, int j);
 int		ss_cargv_part_two(char **argv, int *i, int *j);
+int		check_repeat(t_data *d);
 
 #endif

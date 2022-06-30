@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/29 08:58:45 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/06/30 20:48:18 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ include ./sort_five_double/Makefile
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = push_swap
 
@@ -40,16 +40,19 @@ SRC += ./push_swap.c \
 	   ./check_int_max.c \
 	   ./check_int_min.c \
 	   ./ss_cargv_part_two.c \
+	   ./check_repeat.c \
+
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $^
 
-#clean:
-#	rm -f $(OBJ)
+clean:
+	rm -f $(OBJ)
 
-fclean: #clean
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all

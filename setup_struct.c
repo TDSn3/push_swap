@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/29 09:00:49 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/06/30 21:03:09 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ int	setup_struct(t_data *d, int argc, char **argv)
 	{
 		d->stack_a[i - 1] = ft_atoi(argv[i]);
 		i++;
+	}
+	if (check_repeat(d))
+	{
+		free(d->stack_a);
+		free(d->stack_b);
+		return (return_error());
 	}
 	setup_struct_two(d);
 	return (0);
