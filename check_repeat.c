@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 20:47:12 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/30 21:48:17 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/07/02 10:22:48 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	check_repeat(t_data *d)
 		j = i + 1;
 		while (j < d->size_a)
 		{
-			printf("\n!!!\n");
-			if (d->stack_a[i] && d->stack_a[j])
-				if (d->stack_a[i] == d->stack_a[j])
-					return (1);
+			if (d->stack_a[i] == d->stack_a[j])
+				return (1);
 			j++;
 		}
 		i++;
