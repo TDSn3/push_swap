@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/06/30 21:03:09 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/08/29 15:43:02 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	setup_struct_two(t_data *d);
 static int	check_argv(int argc, char **argv);
-static int	return_error(void);
+static void	part_two(t_data *d, int argc);
 
 int	setup_struct(t_data *d, int argc, char **argv)
 {
@@ -29,8 +29,7 @@ int	setup_struct(t_data *d, int argc, char **argv)
 	d->stack_b = malloc(sizeof(int) * argc - 1);
 	if (!d->stack_b)
 		return (return_error());
-	d->size_a = argc - 1;
-	d->size_b = 0;
+	part_two(d, argc);
 	while (i < argc)
 	{
 		d->stack_a[i - 1] = ft_atoi(argv[i]);
@@ -78,8 +77,8 @@ static int	check_argv(int argc, char **argv)
 	return (0);
 }
 
-static int	return_error(void)
+static void	part_two(t_data *d, int argc)
 {
-	write(2, "Error\n", 6);
-	return (1);
+	d->size_a = argc - 1;
+	d->size_b = 0;
 }

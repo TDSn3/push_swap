@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 08:48:59 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/07/02 10:13:07 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/08/29 11:26:18 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_int_min(char **argv, int i, int j)
 		return (0);
 	if (argv[i][0] == '-')
 	{
-		if (argv[i][1] > '2')
+		if (argv[i][1] > '2' || argv[i][11])
 			return (1);
 		else if (argv[i][1] == '2')
 			if (part_two(argv, i))

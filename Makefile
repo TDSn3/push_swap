@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/06/30 20:48:18 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/08/29 15:38:32 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC += ./push_swap.c \
 	   ./check_int_min.c \
 	   ./ss_cargv_part_two.c \
 	   ./check_repeat.c \
+	   ./return_error.c \
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 08:46:40 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/07/02 10:13:12 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/08/29 11:26:56 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_int_max(char **argv, int i, int j)
 {
 	if (j != 9 && !argv[i][9])
 		return (0);
-	if (argv[i][0] > '2')
+	if (argv[i][0] > '2' || argv[i][10])
 		return (1);
 	else if (argv[i][0] == '2')
 		if (part_two(argv, i))
