@@ -6,12 +6,19 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:03:17 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/05 15:16:31 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/06 12:28:51 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
+
+typedef struct s_tli
+{
+	int				content;
+	struct s_tli	*prev;
+	struct s_tli	*next;
+}	t_tli;
 
 typedef struct s_data
 {

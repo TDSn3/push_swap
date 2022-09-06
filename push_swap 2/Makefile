@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/05 16:38:28 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/09/06 16:06:09 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC += ./operation/sa.c \
 SRC += ./useful_function/ascending_order_tab.c \
 	   ./useful_function/descending_order_tab.c \
 	   ./useful_function/dup_tab.c \
+	   ./useful_function/pos_in_stack.c \
 	   ./useful_function/first_step/setup_struct.c \
 	   ./useful_function/first_step/return_error.c \
 	   ./useful_function/first_step/ss_cargv_part_two.c \
@@ -78,6 +79,23 @@ SRC += ./sort_first_five/double_lst/dl_add_back.c \
 	   ./sort_first_five/sort_descending_first_five_a/sort_first_five_da.c \
 	   ./sort_first_five/check_duplicate_a.c \
 	   ./sort_first_five/check_duplicate_b.c \
+
+SRC += ./t_list_int/tli_new.c \
+	   ./t_list_int/tli_setup_a_five.c \
+	   ./t_list_int/tli_setup_a_ten.c \
+	   ./t_list_int/tli_setup_b_five.c \
+	   ./t_list_int/tli_setup_b_ten.c \
+	   ./t_list_int/tli_setup_b_half_a.c \
+	   ./t_list_int/tli_add_back.c \
+	   ./t_list_int/tli_size.c \
+	   ./t_list_int/tli_last.c \
+	   ./t_list_int/tli_clear.c \
+	   ./t_list_int/tli_clear_one.c \
+	   ./t_list_int/find_pos_max_tli.c \
+	   ./t_list_int/find_pos_min_tli.c \
+	   ./t_list_int/tli_setup_b_forty.c \
+	   ./t_list_int/tli_setup_a_forty.c \
+
 
 
 OBJ = $(SRC:.c=.o)

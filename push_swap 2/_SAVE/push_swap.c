@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 17:49:21 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/06 10:42:50 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	test_two(t_data *d);
 void	test_three(t_data *d);
 void	test_four(t_data *d);
 void	test_five(t_data *d);
-void	fusion_one_stack(t_data *d);
 
 
 int	main(int argc, char *argv[])
@@ -36,8 +35,30 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 
-	fusion_one_stack(&d);
-
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	test(&d);
+//	
+//	test_two(&d);
+//	test_two(&d);
+//	test_two(&d);
+//	test_two(&d);
+//	test_two(&d);
+//
+//	test_three(&d);
+//	test_three(&d);
+//
+//	test_four(&d);
+//
+//	test_five(&d);
 
 //	show_stack(&d);
 
@@ -223,127 +244,3 @@ void	test_five(t_data *d)
 	}
 }
 
-void	fusion_one_stack(t_data *d)
-{
-	sort_first_five_da(d);
-	for (int i = 0; i < 5; i++)
-		ra(d);
-	sort_first_five_da(d);
-	for (int i = 0; i < 5; i++)
-		rra(d);	
-
-	int		i;
-	int		j;
-	int		nb_a;
-	int		nb_b;
-	int 	nb_sort;
-	t_tli	*list_nb_sorted;
-	t_tli	*list_a;
-	t_tli	*list_b;
-
-	list_a = NULL;
-	list_b = NULL;
-	list_nb_sorted = NULL;
-	for (int i = 0; i < 5; i++)
-		tli_add_back(&list_a, tli_new(d->stack_a[i]));
-	for (int i = 5; i < 10; i++)
-		tli_add_back(&list_b, tli_new(d->stack_a[i]));
-
-	i = 0;
-	j = 0;
-	nb_a = 0;
-	nb_b = 0;
-	nb_sort = 1;
-
-	if (list_a->content > list_b->content)
-	{
-		tli_add_back(&list_nb_sorted, tli_new(list_a->content));
-		tli_clear_one(&list_a, list_a->content);
-		nb_a++;
-
-	}
-	else
-	{
-		tli_add_back(&list_nb_sorted, tli_new(list_b->content));
-		tli_clear_one(&list_b, list_b->content);
-		nb_b++;
-
-	}
-
-//	printf("\n");
-//	for (t_tli *cpy = list_a; cpy; cpy = cpy->next)
-//		printf("%d ", cpy->content);
-//	printf("\n");
-//	for (t_tli *cpy = list_b; cpy; cpy = cpy->next)
-//		printf("%d ", cpy->content);
-//	printf("\n");
-//		for (t_tli *cpy = list_nb_sorted; cpy; cpy = cpy->next)
-//		printf("%d ", cpy->content);
-//	printf("\n\n");
-
-	
-	while (nb_sort < 9)
-	{
-		if ((list_a && list_a->content > list_b->content && nb_a < 5) || (nb_b == 5))
-		{
-			while (d->stack_a[0] != list_a->content)
-			{
-				ra(d);
-			}
-			
-			while (d->stack_a[0] != tli_last(list_nb_sorted)->content && d->stack_a[1] != list_a->content)
-			{
-				if (pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content) > d->size_a / 2)
-				{
-					for (int i = d->size_a - pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content); i; i--)
-					{
-						rra(d);
-						sa(d);
-					}
-				}
-				else
-				{
-					sa(d);
-					if (d->stack_a[0] != tli_last(list_nb_sorted)->content)
-						ra(d);
-				}
-			}
-			
-			tli_add_back(&list_nb_sorted, tli_new(list_a->content));
-			tli_clear_one(&list_a, list_a->content);
-			nb_a++;
-		}
-		else if (list_b)
-		{
-			while (d->stack_a[0] != list_b->content)
-			{
-				ra(d);
-			}
-			while (d->stack_a[0] != tli_last(list_nb_sorted)->content && d->stack_a[1] != list_b->content)
-			{
-				if (pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content) > d->size_a / 2)
-				{
-					for (int i = d->size_a - pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content); i; i--)
-					{
-						rra(d);
-						sa(d);
-					}
-				}
-				else
-				{
-					sa(d);
-					if (d->stack_a[0] != tli_last(list_nb_sorted)->content)
-						ra(d);
-				}
-			}
-			tli_add_back(&list_nb_sorted, tli_new(list_b->content));
-			tli_clear_one(&list_b, list_b->content);
-			nb_b++;
-		}
-		nb_sort++;		
-	}
-//		tli_clear(&list_a);
-//		if (nb_b < 5)
-//			tli_clear(&list_b);
-		tli_clear(&list_nb_sorted);
-}

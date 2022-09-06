@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   tli_add_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 12:31:22 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 16:18:44 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:43:51 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../header.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "./libft/libft.h"
-# include "./struct.h"
-# include "./operation_on_tab/ot.h"
-# include "./operation/operation.h"
-# include "./useful_function/useful_function.h"
-# include "./sort_first_five/sort_first_five.h"
-# include "./t_list_int/t_list_int.h"
+void	tli_add_back(t_tli **lst, t_tli *new)
+{
+	t_tli	*copyl;
 
-#endif
+	if (lst)
+	{
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			copyl = tli_last(*lst);
+			copyl->next = new;
+			copyl->next->prev = copyl;
+		}
+	}
+}

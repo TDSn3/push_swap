@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   tli_setup_b_half_a.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 12:31:22 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/07 12:09:14 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:17:01 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../header.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "./libft/libft.h"
-# include "./struct.h"
-# include "./operation_on_tab/ot.h"
-# include "./operation/operation.h"
-# include "./useful_function/useful_function.h"
-# include "./sort_first_five/sort_first_five.h"
-# include "./t_list_int/t_list_int.h"
+t_tli	*tli_setup_b_half_a(t_data *d, t_tli *tli, int size_b)
+{
+	int		i;
+	int		size;
 
-#endif
+	if (d->size_a == 0)
+		return (NULL);
+	if (d->size_a > size_b)
+		size = size_b;
+	else
+		size = d->size_a;
+	i = 0;
+	while (i < size)
+	{
+		tli_add_back(&tli, tli_new(d->stack_a[i]));
+		i++;
+	}
+	return (tli);
+}

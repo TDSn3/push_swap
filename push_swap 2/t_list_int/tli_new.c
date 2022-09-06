@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   tli_new.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 12:31:22 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/03/16 10:59:24 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:19:13 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../header.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "./libft/libft.h"
-# include "./struct.h"
-# include "./operation_on_tab/ot.h"
-# include "./operation/operation.h"
-# include "./useful_function/useful_function.h"
-# include "./sort_first_five/sort_first_five.h"
-# include "./t_list_int/t_list_int.h"
+t_tli	*tli_new(int content)
+{
+	t_tli	*ln;
 
-#endif
+	ln = malloc(sizeof(t_tli));
+	if (!ln)
+		return (NULL);
+	ln->content = content;
+	ln->next = NULL;
+	ln->prev = NULL;
+	return (ln);
+}

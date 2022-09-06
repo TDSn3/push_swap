@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   find_pos_min_tli.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 12:31:22 by tda-silv         ###   ########.fr       */
+/*   Created: 2022/06/04 08:22:00 by tda-silv          #+#    #+#             */
+/*   Updated: 2022/06/19 11:43:46 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../header.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "./libft/libft.h"
-# include "./struct.h"
-# include "./operation_on_tab/ot.h"
-# include "./operation/operation.h"
-# include "./useful_function/useful_function.h"
-# include "./sort_first_five/sort_first_five.h"
-# include "./t_list_int/t_list_int.h"
+t_tli	*find_pos_min_tli(t_tli *tli)
+{
+	t_tli	*tli_pos;
+	t_tli	*tli_cpy;
 
-#endif
+	tli_cpy = tli->next;
+	tli_pos = tli;
+	while (tli_cpy)
+	{
+		if (tli_pos->content < tli_cpy->content)
+			tli_pos = tli_cpy;
+		tli_cpy = tli_cpy->next;
+	}
+	return (tli_pos);
+}
