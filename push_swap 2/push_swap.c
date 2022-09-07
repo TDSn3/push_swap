@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 17:49:21 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/07 18:23:45 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ void	test_two(t_data *d);
 void	test_three(t_data *d);
 void	test_four(t_data *d);
 void	test_five(t_data *d);
-void	fusion_one_stack(t_data *d);
-
+void	fusion_one_stack(t_data *d, t_tli **list_nb_sorted);
+int		find_pos_nb_sort(t_data *d, t_tli *list_nb_sorted);
+void	fusion_part_two(t_data *d, t_tli *list_nb_sorted);
 
 int	main(int argc, char *argv[])
 {
 	t_data	d;
+	t_tli	*list_nb_sorted;
 
+	list_nb_sorted = NULL;
 	if (argc < 2)
 		return (0);
 	if (check_error(argc, argv) || setup_struct(&d, argc, argv))
@@ -36,11 +39,19 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 
-	fusion_one_stack(&d);
-
+	fusion_one_stack(&d, &list_nb_sorted);
+	fusion_part_two(&d, list_nb_sorted);
+	fusion_one_stack(&d, &list_nb_sorted);
+	fusion_part_two(&d, list_nb_sorted);
+	fusion_one_stack(&d, &list_nb_sorted);
+	fusion_part_two(&d, list_nb_sorted);
+	fusion_one_stack(&d, &list_nb_sorted);
+	fusion_part_two(&d, list_nb_sorted);
+	fusion_one_stack(&d, &list_nb_sorted);
 
 //	show_stack(&d);
 
+	tli_clear(&list_nb_sorted);
 	free(d.stack_a);
 	free(d.stack_b);
 	return (0);
@@ -223,7 +234,7 @@ void	test_five(t_data *d)
 	}
 }
 
-void	fusion_one_stack(t_data *d)
+void	fusion_one_stack(t_data *d, t_tli **list_nb_sorted)
 {
 	sort_first_five_da(d);
 	for (int i = 0; i < 5; i++)
@@ -237,13 +248,11 @@ void	fusion_one_stack(t_data *d)
 	int		nb_a;
 	int		nb_b;
 	int 	nb_sort;
-	t_tli	*list_nb_sorted;
 	t_tli	*list_a;
 	t_tli	*list_b;
 
 	list_a = NULL;
 	list_b = NULL;
-	list_nb_sorted = NULL;
 	for (int i = 0; i < 5; i++)
 		tli_add_back(&list_a, tli_new(d->stack_a[i]));
 	for (int i = 5; i < 10; i++)
@@ -257,14 +266,14 @@ void	fusion_one_stack(t_data *d)
 
 	if (list_a->content > list_b->content)
 	{
-		tli_add_back(&list_nb_sorted, tli_new(list_a->content));
+		tli_add_back(list_nb_sorted, tli_new(list_a->content));
 		tli_clear_one(&list_a, list_a->content);
 		nb_a++;
 
 	}
 	else
 	{
-		tli_add_back(&list_nb_sorted, tli_new(list_b->content));
+		tli_add_back(list_nb_sorted, tli_new(list_b->content));
 		tli_clear_one(&list_b, list_b->content);
 		nb_b++;
 
@@ -281,6 +290,7 @@ void	fusion_one_stack(t_data *d)
 //		printf("%d ", cpy->content);
 //	printf("\n\n");
 
+
 	
 	while (nb_sort < 9)
 	{
@@ -288,14 +298,17 @@ void	fusion_one_stack(t_data *d)
 		{
 			while (d->stack_a[0] != list_a->content)
 			{
-				ra(d);
+				if (pos_in_stack(d->stack_a, d->size_a, tli_last(*list_nb_sorted)->content) > d->size_a / 2)
+					rra(d);
+				else
+					ra(d);
 			}
 			
-			while (d->stack_a[0] != tli_last(list_nb_sorted)->content && d->stack_a[1] != list_a->content)
+			while (d->stack_a[0] != tli_last(*list_nb_sorted)->content && d->stack_a[1] != list_a->content)
 			{
-				if (pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content) > d->size_a / 2)
+				if (pos_in_stack(d->stack_a, d->size_a, tli_last(*list_nb_sorted)->content) > d->size_a / 2)
 				{
-					for (int i = d->size_a - pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content); i; i--)
+					for (int i = d->size_a - pos_in_stack(d->stack_a, d->size_a, tli_last(*list_nb_sorted)->content); i; i--)
 					{
 						rra(d);
 						sa(d);
@@ -304,12 +317,12 @@ void	fusion_one_stack(t_data *d)
 				else
 				{
 					sa(d);
-					if (d->stack_a[0] != tli_last(list_nb_sorted)->content)
+					if (d->stack_a[0] != tli_last(*list_nb_sorted)->content)
 						ra(d);
 				}
 			}
 			
-			tli_add_back(&list_nb_sorted, tli_new(list_a->content));
+			tli_add_back(list_nb_sorted, tli_new(list_a->content));
 			tli_clear_one(&list_a, list_a->content);
 			nb_a++;
 		}
@@ -319,11 +332,11 @@ void	fusion_one_stack(t_data *d)
 			{
 				ra(d);
 			}
-			while (d->stack_a[0] != tli_last(list_nb_sorted)->content && d->stack_a[1] != list_b->content)
+			while (d->stack_a[0] != tli_last(*list_nb_sorted)->content && d->stack_a[1] != list_b->content)
 			{
-				if (pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content) > d->size_a / 2)
+				if (pos_in_stack(d->stack_a, d->size_a, tli_last(*list_nb_sorted)->content) > d->size_a / 2)
 				{
-					for (int i = d->size_a - pos_in_stack(d->stack_a, d->size_a, tli_last(list_nb_sorted)->content); i; i--)
+					for (int i = d->size_a - pos_in_stack(d->stack_a, d->size_a, tli_last(*list_nb_sorted)->content); i; i--)
 					{
 						rra(d);
 						sa(d);
@@ -332,11 +345,11 @@ void	fusion_one_stack(t_data *d)
 				else
 				{
 					sa(d);
-					if (d->stack_a[0] != tli_last(list_nb_sorted)->content)
+					if (d->stack_a[0] != tli_last(*list_nb_sorted)->content)
 						ra(d);
 				}
 			}
-			tli_add_back(&list_nb_sorted, tli_new(list_b->content));
+			tli_add_back(list_nb_sorted, tli_new(list_b->content));
 			tli_clear_one(&list_b, list_b->content);
 			nb_b++;
 		}
@@ -345,5 +358,36 @@ void	fusion_one_stack(t_data *d)
 //		tli_clear(&list_a);
 //		if (nb_b < 5)
 //			tli_clear(&list_b);
-		tli_clear(&list_nb_sorted);
+}
+
+int	find_pos_nb_sort(t_data *d, t_tli *list_nb_sorted)
+{
+	t_tli	*cpy;
+	int		stock_pos;
+	int		i;
+
+	cpy = list_nb_sorted;
+	stock_pos = -1;
+	while (cpy)
+	{
+		i = pos_in_stack(d->stack_a, d->size_a, cpy->content);
+		if(i < 10)
+			stock_pos = i;
+		cpy = cpy->next;
+	}
+	return (stock_pos);
+}
+
+void	fusion_part_two(t_data *d, t_tli *list_nb_sorted)
+{
+	while (find_pos_nb_sort(d, list_nb_sorted) != -1)
+	{
+		rra(d);
+	}
+//	for (int i = 0; i < 20; i++)
+//	{
+//		printf("%d\n", find_pos_nb_sort(d, list_nb_sorted));
+//		rra(d);
+//	}
+
 }
