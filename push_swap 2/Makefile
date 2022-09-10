@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/06 16:06:09 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/09/10 17:56:53 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,34 @@ SRC += ./t_list_int/tli_new.c \
 	   ./t_list_int/tli_setup_b_forty.c \
 	   ./t_list_int/tli_setup_a_forty.c \
 
+SRC += ./sort_five_double/sfd_a/sfd_if_sorted_a.c \
+	   ./sort_five_double/sfd_a/sfd_make_all_oper_a.c \
+	   ./sort_five_double/sfd_a/sfd_sort_first_five_a.c \
+	   ./sort_five_double/sfd_b/sfd_if_sorted_b.c \
+	   ./sort_five_double/sfd_b/sfd_make_all_oper_b.c \
+	   ./sort_five_double/sfd_b/sfd_sort_first_five_b.c \
+	   ./sort_five_double/sort_five_double.c \
+	   ./sort_five_double/while_for_sfd.c \
 
+SRC += ./sort_five_double_reverse/sfd_a/sfd_if_sorted_a_r.c \
+	   ./sort_five_double_reverse/sfd_a/sfd_make_all_oper_a_r.c \
+	   ./sort_five_double_reverse/sfd_a/sfd_sort_first_five_a_r.c \
+	   ./sort_five_double_reverse/sfd_b/sfd_if_sorted_b_r.c \
+	   ./sort_five_double_reverse/sfd_b/sfd_make_all_oper_b_r.c \
+	   ./sort_five_double_reverse/sfd_b/sfd_sort_first_five_b_r.c \
+	   ./sort_five_double_reverse/sort_five_double_r.c \
+	   ./sort_five_double_reverse/while_for_sfd_r.c \
+	   ./sort_five_double_reverse/sfd_a/if_sorted_a_r.c \
+	   ./sort_five_double_reverse/sfd_b/if_sorted_b_r.c \
+
+SRC += ./t_index/tindex_new.c \
+	   ./t_index/tindex_add_back.c \
+	   ./t_index/tindex_size.c \
+	   ./t_index/tindex_last.c \
+	   ./t_index/tindex_clear.c \
+	   ./t_index/tindex_clear_one.c \
+	   ./t_index/find_pos_max_tindex.c \
+	   ./t_index/find_pos_min_tindex.c \
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:03:17 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 12:28:51 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/10 18:10:12 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@ typedef struct s_tli
 	struct s_tli	*prev;
 	struct s_tli	*next;
 }	t_tli;
+
+typedef struct s_index
+{
+	int				content_index;
+	int				content_stack;
+	struct s_index	*prev;
+	struct s_index	*next;
+}	t_index;
 
 typedef struct s_data
 {

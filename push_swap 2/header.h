@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/06 12:31:22 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/10 17:52:01 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@
 # include "./useful_function/useful_function.h"
 # include "./sort_first_five/sort_first_five.h"
 # include "./t_list_int/t_list_int.h"
+# include "./sort_five_double/sort_five_double.h"
+# include "./sort_five_double_reverse/sort_five_double_r.h"
+# include "./t_index/t_index.h"
 
 #endif
