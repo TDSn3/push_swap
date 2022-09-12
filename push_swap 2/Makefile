@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/10 17:56:53 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/09/12 15:14:40 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC += ./useful_function/ascending_order_tab.c \
 	   ./useful_function/first_step/check_int_min.c \
 	   ./useful_function/first_step/check_error.c \
 	   ./useful_function/first_step/check_repeat.c \
+	   	./useful_function/pb_sort.c \
 
 SRC += ./sort_first_five/double_lst/dl_add_back.c \
 	   ./sort_first_five/double_lst/dl_last.c \
