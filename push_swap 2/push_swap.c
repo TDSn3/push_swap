@@ -6,14 +6,13 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/12 15:28:51 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/13 16:31:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	show_stack(t_data *stack);
-int		find_index(int nb, t_index *index_lst, t_data *d);
+//static void	show_stack(t_data *stack);
 int		order_b(int nb, t_data *d);
 
 int	main(int argc, char *argv[])
@@ -30,16 +29,19 @@ int	main(int argc, char *argv[])
 		free(d.stack_b);
 		return (0);
 	}
-
-	pb_sort(&d);
 	
+	pb_sort(&d, 450, 500); // ICI 80 100 pour / 5
+
+	while (d.size_b)
+	{
+		pa(&d);
+	}
 	free(d.stack_a);
 	free(d.stack_b);
 	return (0);
 }
-
-
-void	show_stack(t_data *d)
+/*
+static void	show_stack(t_data *d)
 {
 	int	i;
 
@@ -59,21 +61,7 @@ void	show_stack(t_data *d)
 	}
 	printf("\n\n");
 }
-
-int	find_index(int nb, t_index *index_lst, t_data *d)
-{
-	int i;
-
-	i = 0;
-	while (i < d->stock_size_a)
-	{
-		if (nb == index_lst->content_stack)
-			return (index_lst->content_index);
-		i++;
-	}
-	return (-1);
-}
-
+*/
 int	order_b(int nb, t_data *d)
 {
 	int	i;

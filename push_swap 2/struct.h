@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:03:17 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/11 17:41:19 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:33:04 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ typedef struct s_index
 typedef struct s_data
 {
 	int		*stack_a;
+	int		*cpy_stack_a;
 	int		size_a;
 	int		stock_size_a;
 	int		*stack_b;
+	int		*cpy_stack_b;
 	int		size_b;
 }	t_data;
 

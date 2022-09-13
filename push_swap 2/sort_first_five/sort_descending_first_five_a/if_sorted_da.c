@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:19:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/05 16:34:58 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/13 13:27:57 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,20 @@ static void	if_sorted_three(t_data *d, t_sub_lst *cpy_lo)
 	while (cpy_lo->prev)
 	{
 		if (cpy_lo->oper_used == 1)
+		{
 			sa(d);
+			sa_ot(d->cpy_stack_a, d->size_a);
+		}
 		if (cpy_lo->oper_used == 2)
+		{
 			ra(d);
+			ra_ot(d->cpy_stack_a, d->size_a);
+		}
 		if (cpy_lo->oper_used == 4)
+		{
 			rra(d);
+			rra_ot(d->cpy_stack_a, d->size_a);
+		}
 		cpy_lo = cpy_lo->prev;
 	}
 }
