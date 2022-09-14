@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/13 15:33:20 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/14 08:27:38 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	setup_struct(t_data *d, int argc, char **argv)
 	d->size_a = argc - 1;
 	d->size_b = 0;
 	d->stock_size_a = d->size_a;
+	d->rest_div = 0;
 	while (i < argc)
 	{
 		d->stack_a[i - 1] = ft_atoi(argv[i]);

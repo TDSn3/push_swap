@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:52:25 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/13 16:19:11 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/14 08:03:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int     check_error(int argc, char **argv);
 int	    check_repeat(t_data *d);
 int	    pos_in_stack(int *tab, int size, int nb);
 void	pb_sort(t_data *d, int min_index, int max_index);
+void	clear_all(t_data *d);
 
 #endif

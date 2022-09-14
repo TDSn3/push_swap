@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:59:41 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/13 16:38:05 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/14 09:53:24 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 	int	pos_max_b;
 	int	next_index;
 	t_index	*index_lst;
+	int	size_divided;
 
 	int	rra_i;
 	int ra_i;
@@ -40,14 +41,27 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 	ra_i = 0;
 	rrb_i = 0;
 	rb_i = 0;
+	if (d->stock_size_a <= 50)
+		size_divided = d->stock_size_a;
+	if (d->stock_size_a <= 150 && d->stock_size_a > 50)
+		size_divided = d->stock_size_a / 5;
+	if (d->stock_size_a > 150)
+		size_divided = d->stock_size_a / 10;
+
+	if (min_index < size_divided)
+	{
+		size_divided += min_index;
+		min_index = 0;
+	}
+		
 
 	index_lst = index_stack(d);
 
-	if (d->stock_size_a % 2 != 0)
-		i++;
+//	if (d->stock_size_a % 2 != 0)
+//		i++;
 		
-	while (i < /*d->stock_size_a*/ 50) // ICI 20 pour /5
-	{		
+	while (i < /*d->stock_size_a*/ size_divided) // ICI 20 pour /5
+	{				
 		next_index = find_nex_index(min_index, max_index, index_lst, d);
 		if (d->stack_a[0] != next_index)
 		{
@@ -78,7 +92,7 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 				{
 					while (d->cpy_stack_b[0] != nearest_nb)
 					{
-						rra_ot(d->cpy_stack_b, d->size_b); // rrb
+						rra_ot(d->cpy_stack_b, d->size_b);
 						rrb_i++;
 					}
 				}
@@ -86,7 +100,7 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 				{
 					while (d->cpy_stack_b[0] != nearest_nb)
 					{
-						ra_ot(d->cpy_stack_b, d->size_b); // rrb
+						ra_ot(d->cpy_stack_b, d->size_b); 
 						rb_i++;	
 					}
 				}
@@ -101,7 +115,7 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 				{
 					while (d->cpy_stack_b[0] != pos_max_b)
 					{
-						rra_ot(d->cpy_stack_b, d->size_b); // rrb
+						rra_ot(d->cpy_stack_b, d->size_b);
 						rrb_i++;
 					}
 				}
@@ -109,7 +123,7 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 				{
 					while (d->cpy_stack_b[0] != pos_max_b)
 					{
-						ra_ot(d->cpy_stack_b, d->size_b); // rrb
+						ra_ot(d->cpy_stack_b, d->size_b);
 						rb_i++;	
 					}
 				}
@@ -175,7 +189,8 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 				rb(d);
 			}			
 	}
-	if (min_index == 150) // ICI 20 pour / 5 et 150 pour 500
+	
+	if (min_index == size_divided * 3 && d->stock_size_a > 150)
 	{	
 		while (d->size_b)
 		{
@@ -183,8 +198,22 @@ void	pb_sort(t_data *d, int min_index, int max_index)
 			pa(d);
 		}
 	}
-	if (min_index >= 50) // ICI 20 pour / 5
-		pb_sort(d, min_index - 50, max_index - 50); // ICI 20 pour / 5
+	if (min_index == size_divided && d->stock_size_a <= 150 && d->stock_size_a > 50)
+	{	
+		while (d->size_b)
+		{
+			pa_ot(d->cpy_stack_a, d->cpy_stack_b, d->size_a, d->size_b);
+			pa(d);
+		}
+	}
+
+	if (d->stock_size_a <= 150 && d->stock_size_a > 50)
+		d->rest_div += d->stock_size_a % 5;
+	if (d->stock_size_a > 150)
+		d->rest_div += d->stock_size_a % 10;
+
+	if (min_index >= size_divided)
+		pb_sort(d, min_index - size_divided, max_index - size_divided);
 
 }
 static int	find_nb(int index, t_index *index_lst)
@@ -345,44 +374,3 @@ static int	find_pos_a(int nb, t_data *d)
 	}
 	return (-1);
 }
-/*
-static void	show_stack(t_data *d)
-{
-	int	i;
-
-	i = 0;
-	printf("\nstack_a : ");
-	while (i < d->size_a)
-	{
-		printf("%d ", d->stack_a[i]);
-		i++;
-	}
-	i = 0;
-	printf("\nstack_b : ");
-	while (i < d->size_b)
-	{
-		printf("%d ", d->stack_b[i]);
-		i++;
-	}
-	printf("\n\n");
-
-
-
-	i = 0;
-	printf("\nstack_a : ");
-	while (i < d->size_a)
-	{
-		printf("%d ", d->cpy_stack_a[i]);
-		i++;
-	}
-	i = 0;
-	printf("\nstack_b : ");
-	while (i < d->size_b)
-	{
-		printf("%d ", d->cpy_stack_b[i]);
-		i++;
-	}
-	printf("\n\n");
-}
-*/
-

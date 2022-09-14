@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:03:17 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/13 15:33:04 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/14 08:27:21 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_data
 	int		*stack_b;
 	int		*cpy_stack_b;
 	int		size_b;
+	int		rest_div;
 }	t_data;
 
 typedef struct s_sub_lst

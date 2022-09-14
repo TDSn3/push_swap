@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/13 16:31:25 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/14 10:11:35 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,43 +25,37 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (ascending_order_tab(d.stack_a, d.size_a) == -1)
 	{
-		free(d.stack_a);
-		free(d.stack_b);
+		clear_all(&d);
 		return (0);
 	}
-	
-	pb_sort(&d, 450, 500); // ICI 80 100 pour / 5
 
-	while (d.size_b)
+	if (d.stock_size_a < 6)
 	{
-		pa(&d);
+		sort_first_five_a(&d);
+		clear_all(&d);
+		return (0);
 	}
-	free(d.stack_a);
-	free(d.stack_b);
+	if (d.stock_size_a <= 50)
+	{
+		pb_sort(&d, 0, d.size_a);
+		while (d.size_b)
+			pa(&d);	}
+	if (d.stock_size_a <= 150 && d.stock_size_a > 50)
+	{
+		pb_sort(&d, d.size_a - (d.size_a / 5), d.size_a);
+		while (d.size_b)
+			pa(&d);
+	}
+	if (d.stock_size_a > 150)
+	{
+		pb_sort(&d, d.size_a - (d.size_a / 10), d.size_a);
+		while (d.size_b)
+			pa(&d);
+	}
+	clear_all(&d);
 	return (0);
 }
-/*
-static void	show_stack(t_data *d)
-{
-	int	i;
 
-	i = 0;
-	printf("\nstack_a : ");
-	while (i < d->size_a)
-	{
-		printf("%d ", d->stack_a[i]);
-		i++;
-	}
-	i = 0;
-	printf("\nstack_b : ");
-	while (i < d->size_b)
-	{
-		printf("%d ", d->stack_b[i]);
-		i++;
-	}
-	printf("\n\n");
-}
-*/
 int	order_b(int nb, t_data *d)
 {
 	int	i;
