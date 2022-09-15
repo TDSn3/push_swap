@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:52:51 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/14 13:55:47 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:49:02 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	smart_b(t_data *d, int x)
 	{
 		while (d->cpy_stack_b[0] != x)
 		{
-			ra_ot(d->cpy_stack_b, d->size_b); 
-			d->rb_i++;	
+			ra_ot(d->cpy_stack_b, d->size_b);
+			d->rb_i++;
 		}
 	}
 }

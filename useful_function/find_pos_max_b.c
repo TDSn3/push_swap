@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:12:32 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/14 14:13:04 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:57:06 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	find_pos_max_b(t_data *d)
 {
-	int i;
+	int	i;
 	int	stock_max;
 
 	i = 1;

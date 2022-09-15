@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 08:58:51 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/08 18:22:52 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:46:30 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	tli_clear_one(t_tli **tli, int content)
 	if (tli_size_stock == 1)
 	{
 		free(*tli);
-	//	*tli = NULL;  ATTENTION - cree un segfault je ne sais pas pk
 		return ;
 	}	
 	while (tli_cpy && tli_cpy->content != content)

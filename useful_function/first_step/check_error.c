@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:13:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/05 16:03:33 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:51:55 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	check_argv(int argc, char **argv);
 
-int check_error(int argc, char **argv)
+int	check_error(int argc, char **argv)
 {
 	if (check_argv(argc, argv))
 		return (return_error());

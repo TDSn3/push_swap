@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:34:16 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/14 14:42:49 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:46:59 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	up_biggest_b(t_data *d)
 {
-	int pos_max_b;
-	
+	int	pos_max_b;
+
 	pos_max_b = find_pos_max_b(d);
 	while (d->stack_b[0] != pos_max_b)
 	{

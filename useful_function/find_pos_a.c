@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:05:29 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/14 14:06:27 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:56:53 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	find_pos_a(int nb, t_data *d)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < d->size_a)

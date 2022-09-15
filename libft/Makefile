@@ -6,11 +6,13 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/14 10:44:57 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/09/15 19:09:11 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = ./libft/ft_strlen.c \
 	  ./libft/ft_atoi.c \
+	  ./libft/ft_bzero.c \
+	  ./libft/ft_calloc.c \
 
 all: $(SRC)

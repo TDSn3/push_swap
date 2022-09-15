@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/13 12:09:26 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:51:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	pa_ot(int *tab_a, int *tab_b, int size_a, int size_b)
 
 static void	pa_two(int *tab_b, int size_a, int size_b)
 {
-	int i;
+	int	i;
 
 	size_a++;
 	i = 0;

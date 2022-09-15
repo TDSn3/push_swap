@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:00:27 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/14 14:03:21 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:49:19 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	find_nb(int index, t_index *index_lst)
 {
-	t_index *cpy;
+	t_index	*cpy;
 
 	cpy = index_lst;
 	while (cpy)
