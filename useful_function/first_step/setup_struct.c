@@ -6,13 +6,13 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/15 19:55:05 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/16 18:07:25 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-static void	calloc_all(t_data *d, int argc);
+static int	calloc_all(t_data *d, int argc);
 static void	initialize(t_data *d, int argc);
 
 int	setup_struct(t_data *d, int argc, char **argv)
@@ -20,7 +20,8 @@ int	setup_struct(t_data *d, int argc, char **argv)
 	int	i;
 
 	i = 1;
-	calloc_all(d, argc);
+	if (calloc_all(d, argc))
+		return (return_error());
 	initialize(d, argc);
 	while (i < argc)
 	{
@@ -37,20 +38,21 @@ int	setup_struct(t_data *d, int argc, char **argv)
 	return (0);
 }
 
-static void	calloc_all(t_data *d, int argc)
+static int	calloc_all(t_data *d, int argc)
 {
 	d->stack_a = ft_calloc(sizeof(int), argc - 1);
 	if (!d->stack_a)
-		return (return_error());
+		return (1);
 	d->stack_b = ft_calloc(sizeof(int), argc - 1);
 	if (!d->stack_b)
-		return (return_error());
+		return (1);
 	d->cpy_stack_a = ft_calloc(sizeof(int), argc - 1);
 	if (!d->cpy_stack_a)
-		return (return_error());
+		return (1);
 	d->cpy_stack_b = ft_calloc(sizeof(int), argc - 1);
 	if (!d->cpy_stack_b)
-		return (return_error());
+		return (1);
+	return (0);
 }
 
 static void	initialize(t_data *d, int argc)

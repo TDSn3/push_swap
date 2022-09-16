@@ -6,7 +6,7 @@
 #    By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 16:59:26 by tda-silv          #+#    #+#              #
-#    Updated: 2022/09/15 19:20:56 by tda-silv         ###   ########.fr        #
+#    Updated: 2022/09/16 18:23:20 by tda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,9 @@ SRC += ./useful_function/ascending_order_tab.c \
 	   ./useful_function/find_pos_max_b.c \
 	   ./useful_function/ex_pa_end.c \
 	   ./useful_function/up_biggest_b.c \
+	   ./useful_function/find_nb_after_nb.c \
+	   ./useful_function/order_b.c \
+	   ./useful_function/index_stack.c \
 
 SRC += ./sort_first_five/double_lst/dl_add_back.c \
 	   ./sort_first_five/double_lst/dl_last.c \
