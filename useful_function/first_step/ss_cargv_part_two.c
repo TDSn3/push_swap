@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 08:50:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/16 19:38:23 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/17 09:02:56 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static int	check_minus(char **argv, int *i, int *j);
 
 int	ss_cargv_part_two(char **argv, int *i, int *j)
 {
-	if (*j == 9 && check_int_max(argv, *i, *j))
+	if (*j == 9 && check_int_max(argv, *i, *j) && argv[*i][0] != '-')
 		return (1);
-	if (*j == 10 && check_int_min(argv, *i, *j))
+	if (*j == 10 && check_int_min(argv, *i, *j) && argv[*i][0] == '-')
 		return (1);
 	if (argv[*i][*j] != ' ')
 		if (argv[*i][*j] != '-')
