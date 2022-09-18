@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:13:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/15 19:51:55 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:02:49 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,16 @@ static int	check_argv(int argc, char **argv)
 	while (argv[i])
 	{
 		while (argv[i][j])
+		{
+			while (argv[i][j] && argv[i][j] == '0')
+			{
+				if (!argv[i][j + 1])
+					break ;
+				j++;
+			}
 			if (ss_cargv_part_two(argv, &i, &j))
 				return (1);
+		}
 		j = 0;
 		i++;
 	}
