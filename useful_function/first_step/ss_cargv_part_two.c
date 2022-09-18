@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 08:50:18 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/17 09:02:56 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:36:49 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ static int	check_plus(char **argv, int *i, int *j)
 				return (1);
 		if (!argv[*i][*j])
 			return (1);
-		*j -= 1;
+		*j -= 2;
+		if (argv[*i][*j])
+			if (argv[*i][*j] != ' ')
+				return (1);
+		*j += 1;
 	}
 	return (0);
 }
@@ -57,7 +61,11 @@ static int	check_minus(char **argv, int *i, int *j)
 				return (1);
 		if (!argv[*i][*j])
 			return (1);
-		*j -= 1;
+		*j -= 2;
+		if (argv[*i][*j])
+			if (argv[*i][*j] != ' ')
+				return (1);
+		*j += 1;	
 	}
 	return (0);
 }

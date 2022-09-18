@@ -6,7 +6,7 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 12:36:43 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/16 18:07:25 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:27:33 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	setup_struct(t_data *d, int argc, char **argv)
 	{
 		free(d->stack_a);
 		free(d->stack_b);
+		free(d->cpy_stack_a);
+		free(d->cpy_stack_b);
 		return (return_error());
 	}
 	return (0);
@@ -45,13 +47,25 @@ static int	calloc_all(t_data *d, int argc)
 		return (1);
 	d->stack_b = ft_calloc(sizeof(int), argc - 1);
 	if (!d->stack_b)
+	{
+		free(d->stack_a);
 		return (1);
+	}
 	d->cpy_stack_a = ft_calloc(sizeof(int), argc - 1);
 	if (!d->cpy_stack_a)
+	{
+		free(d->stack_a);
+		free(d->stack_b);
 		return (1);
+	}
 	d->cpy_stack_b = ft_calloc(sizeof(int), argc - 1);
 	if (!d->cpy_stack_b)
+	{
+		free(d->stack_a);
+		free(d->stack_b);
+		free(d->cpy_stack_a);
 		return (1);
+	}
 	return (0);
 }
 
