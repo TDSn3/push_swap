@@ -12,10 +12,12 @@
 
 #include "../../header.h"
 
-void	sl_add_back(t_sub_lst **sl, t_sub_lst *new_sl)
+int	sl_add_back(t_sub_lst **sl, t_sub_lst *new_sl)
 {
 	t_sub_lst	*copysl;
 
+	if (!new_sl)
+		return (1);
 	if (sl)
 	{
 		if (!*sl)
@@ -27,4 +29,5 @@ void	sl_add_back(t_sub_lst **sl, t_sub_lst *new_sl)
 			copysl->next->prev = copysl;
 		}
 	}
+	return (0);
 }

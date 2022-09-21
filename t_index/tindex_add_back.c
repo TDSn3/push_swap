@@ -12,10 +12,12 @@
 
 #include "../header.h"
 
-void	tindex_add_back(t_index **lst, t_index *new)
+int	tindex_add_back(t_index **lst, t_index *new)
 {
 	t_index	*copyl;
 
+	if (!new)
+		return (1);
 	if (lst)
 	{
 		if (!*lst)
@@ -27,4 +29,5 @@ void	tindex_add_back(t_index **lst, t_index *new)
 			copyl->next->prev = copyl;
 		}
 	}
+	return (0);
 }

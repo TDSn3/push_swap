@@ -21,10 +21,15 @@ void	make_all_oper_a(t_double_lst *dl, t_data *d)
 	t_sub_lst	*copy_sl;
 
 	copy_sl = (dl_last(dl))->sub_lst;
-	dl_add_back(&dl, dl_new());
+	if (dl_add_back(&dl, dl_new()))
+	{
+		dl_clear(&dl);
+		clear_all(d);
+		exit (-1);
+	}
 	while (copy_sl)
-	{	
-		if (if_sorted_a(d, copy_sl))
+	{
+		if (if_sorted_a(d, copy_sl, &dl))
 			return ;
 		if (copy_sl->oper_used == 1)
 			next_to_sa(d, dl, copy_sl);
@@ -47,7 +52,13 @@ static void	next_to_sa(t_data *d, t_double_lst *dl, t_sub_lst *copy_sl)
 	{
 		td = ra_dt(copy_sl->stack_after_oper, d->size_a);
 		nsl = sl_new(2, td, copy_sl->nb_rra + 1);
-		sl_add_back(&dl_last(dl)->sub_lst, nsl);
+		if (sl_add_back(&dl_last(dl)->sub_lst, nsl))
+		{
+			free(td);
+			dl_clear(&dl);
+			clear_all(d);
+			exit (-1);
+		}
 		sl_link(sl_last(dl_last(dl)->sub_lst), copy_sl);
 	}
 	td = rra_dt(copy_sl->stack_after_oper, d->size_a);
@@ -55,7 +66,13 @@ static void	next_to_sa(t_data *d, t_double_lst *dl, t_sub_lst *copy_sl)
 	{
 		td = rra_dt(copy_sl->stack_after_oper, d->size_a);
 		nsl = sl_new(4, td, copy_sl->nb_rra - 1);
-		sl_add_back(&dl_last(dl)->sub_lst, nsl);
+		if (sl_add_back(&dl_last(dl)->sub_lst, nsl))
+		{
+			free(td);
+			dl_clear(&dl);
+			clear_all(d);
+			exit (-1);
+		}
 		sl_link(sl_last(dl_last(dl)->sub_lst), copy_sl);
 	}
 }
@@ -70,7 +87,13 @@ static void	next_to_ra(t_data *d, t_double_lst *dl, t_sub_lst *copy_sl)
 	{
 		td = ra_dt(copy_sl->stack_after_oper, d->size_a);
 		nsl = sl_new(2, td, copy_sl->nb_rra + 1);
-		sl_add_back(&dl_last(dl)->sub_lst, nsl);
+		if (sl_add_back(&dl_last(dl)->sub_lst, nsl))
+		{
+			free(td);
+			dl_clear(&dl);
+			clear_all(d);
+			exit (-1);
+		}
 		sl_link(sl_last(dl_last(dl)->sub_lst), copy_sl);
 	}
 	td = sa_dt(copy_sl->stack_after_oper, d->size_a);
@@ -78,7 +101,13 @@ static void	next_to_ra(t_data *d, t_double_lst *dl, t_sub_lst *copy_sl)
 	{
 		td = sa_dt(copy_sl->stack_after_oper, d->size_a);
 		nsl = sl_new(1, td, copy_sl->nb_rra);
-		sl_add_back(&dl_last(dl)->sub_lst, nsl);
+		if (sl_add_back(&dl_last(dl)->sub_lst, nsl))
+		{
+			free(td);
+			dl_clear(&dl);
+			clear_all(d);
+			exit (-1);
+		}
 		sl_link(sl_last(dl_last(dl)->sub_lst), copy_sl);
 	}
 }
@@ -93,7 +122,13 @@ static void	next_to_rra(t_data *d, t_double_lst *dl, t_sub_lst *copy_sl)
 	{
 		td = rra_dt(copy_sl->stack_after_oper, d->size_a);
 		nsl = sl_new(4, td, copy_sl->nb_rra - 1);
-		sl_add_back(&dl_last(dl)->sub_lst, nsl);
+		if (sl_add_back(&dl_last(dl)->sub_lst, nsl))
+		{
+			free(td);
+			dl_clear(&dl);
+			clear_all(d);
+			exit (-1);
+		}
 		sl_link(sl_last(dl_last(dl)->sub_lst), copy_sl);
 	}
 	td = sa_dt(copy_sl->stack_after_oper, d->size_a);
@@ -101,7 +136,13 @@ static void	next_to_rra(t_data *d, t_double_lst *dl, t_sub_lst *copy_sl)
 	{
 		td = sa_dt(copy_sl->stack_after_oper, d->size_a);
 		nsl = sl_new(1, td, copy_sl->nb_rra);
-		sl_add_back(&dl_last(dl)->sub_lst, nsl);
+		if (sl_add_back(&dl_last(dl)->sub_lst, nsl))
+		{
+			free(td);
+			dl_clear(&dl);
+			clear_all(d);
+			exit (-1);
+		}
 		sl_link(sl_last(dl_last(dl)->sub_lst), copy_sl);
 	}
 }

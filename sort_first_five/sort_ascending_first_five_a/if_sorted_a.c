@@ -12,10 +12,10 @@
 
 #include "../../header.h"
 
-static void	if_sorted_two(t_sub_lst *cpy, t_sub_lst *lst_oper);
+static void	if_sorted_two(t_data *d, t_sub_lst *cpy, t_sub_lst *lst_oper, t_double_lst **dl);
 static void	if_sorted_three(t_data *d, t_sub_lst *cpy_lo);
 
-int	if_sorted_a(t_data *d, t_sub_lst *copy_sl)
+int	if_sorted_a(t_data *d, t_sub_lst *copy_sl, t_double_lst **dl)
 {
 	t_sub_lst	*cpy;
 	t_sub_lst	*lst_oper;
@@ -28,11 +28,17 @@ int	if_sorted_a(t_data *d, t_sub_lst *copy_sl)
 	else
 		ascending_order_size = d->size_a;
 	cpy = copy_sl;
+	lst_oper = NULL;
 	lst_oper = sl_new(0, NULL, 0);
+	if (!lst_oper)
+	{
+		clear_all(d);
+		exit (-1);
+	}
 	aot = ascending_order_tab(copy_sl->stack_after_oper, ascending_order_size);
 	if (aot == -1 && (copy_sl->nb_rra == 0 || d->size_a <= 5))
 	{
-		if_sorted_two(cpy, lst_oper);
+		if_sorted_two(d, cpy, lst_oper, dl);
 		cpy_lo = lst_oper;
 		if_sorted_three(d, cpy_lo);
 		sl_int_clear(&lst_oper);
@@ -42,14 +48,26 @@ int	if_sorted_a(t_data *d, t_sub_lst *copy_sl)
 	return (0);
 }
 
-static void	if_sorted_two(t_sub_lst *cpy, t_sub_lst *lst_oper)
+static void	if_sorted_two(t_data *d, t_sub_lst *cpy, t_sub_lst *lst_oper, t_double_lst **dl)
 {
 	while (cpy->prev_oper)
 	{
-		sl_add_back(&lst_oper, sl_new(cpy->oper_used, NULL, 0));
+		if (sl_add_back(&lst_oper, sl_new(cpy->oper_used, NULL, 0)))
+		{
+			dl_clear(dl);
+			sl_int_clear(&lst_oper);
+			clear_all(d);
+			exit (-1);
+		}
 		cpy = cpy->prev_oper;
 	}
-	sl_add_back(&lst_oper, sl_new(cpy->oper_used, NULL, 0));
+	if (sl_add_back(&lst_oper, sl_new(cpy->oper_used, NULL, 0)))
+	{
+		dl_clear(dl);
+		sl_int_clear(&lst_oper);
+		clear_all(d);
+		exit (-1);
+	}
 }
 
 static void	if_sorted_three(t_data *d, t_sub_lst *cpy_lo)

@@ -12,10 +12,12 @@
 
 #include "../../header.h"
 
-void	dl_add_back(t_double_lst **dl, t_double_lst *new_dl)
+int	dl_add_back(t_double_lst **dl, t_double_lst *new_dl)
 {
 	t_double_lst	*copydl;
 
+	if (!new_dl)
+		return (1);
 	if (dl)
 	{
 		if (!*dl)
@@ -27,4 +29,5 @@ void	dl_add_back(t_double_lst **dl, t_double_lst *new_dl)
 			copydl->next->prev = copydl;
 		}
 	}
+	return (0);
 }

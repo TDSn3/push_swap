@@ -15,7 +15,7 @@
 
 t_index	*find_pos_max_tindex(t_index *tli);
 t_index	*find_pos_min_tindex(t_index *tli);
-void	tindex_add_back(t_index **lst, t_index *new);
+int	    tindex_add_back(t_index **lst, t_index *new);
 void	tindex_clear_one(t_index **tli, int content);
 void	tindex_clear(t_index **lst);
 t_index	*tindex_last(t_index *lst);

@@ -23,7 +23,12 @@ t_index	*index_stack(t_data *d)
 	while (i < d->size_a)
 	{
 		index = find_nb_after_nb(d, d->stack_a[i]);
-		tindex_add_back(&index_stack_a, tindex_new(index, d->stack_a[i]));
+		if (tindex_add_back(&index_stack_a, tindex_new(index, d->stack_a[i])))
+		{
+			if (index_stack_a)
+				tindex_clear(&index_stack_a);
+			return (NULL);
+		}
 		i++;
 	}
 	return (index_stack_a);

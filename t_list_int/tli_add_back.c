@@ -12,10 +12,12 @@
 
 #include "../header.h"
 
-void	tli_add_back(t_tli **lst, t_tli *new)
+int	tli_add_back(t_tli **lst, t_tli *new)
 {
 	t_tli	*copyl;
 
+	if (!new)
+		return (1);
 	if (lst)
 	{
 		if (!*lst)
@@ -27,4 +29,5 @@ void	tli_add_back(t_tli **lst, t_tli *new)
 			copyl->next->prev = copyl;
 		}
 	}
+	return (0);
 }

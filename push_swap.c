@@ -36,6 +36,12 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	index_lst = index_stack(&d);
+	if (!index_lst)
+	{
+		clear_all(&d);
+		printf("ERRRO\n");
+		exit (-1);
+	}
 	sort_all(&d, index_lst);
 	clear_all(&d);
 	tindex_clear(&index_lst);
@@ -61,5 +67,5 @@ static void	sort_all(t_data *d, t_index *index_lst)
 		pb_sort(d, d->size_a - (d->size_a / 10), d->size_a, index_lst);
 		while (d->size_b)
 			pa(d);
-	}	
+	}
 }
