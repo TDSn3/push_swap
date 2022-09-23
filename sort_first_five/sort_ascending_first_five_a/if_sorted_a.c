@@ -6,82 +6,88 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:19:10 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/05 15:58:51 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:43:38 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-static void	if_sorted_two(t_data *d, t_sub_lst *cpy, t_sub_lst *lst_oper, t_double_lst **dl);
-static void	if_sorted_three(t_data *d, t_sub_lst *cpy_lo);
+static void	is_two(t_data *d, t_sub_lst *cy, t_sub_lst *l_o, t_double_lst **dl);
+static void	if_sorted_three(t_data *d, t_sub_lst *cy_lo);
+static void	part_two(t_data *d, int *ao_sz, t_sub_lst **cy, t_sub_lst *copy_sl);
 
 int	if_sorted_a(t_data *d, t_sub_lst *copy_sl, t_double_lst **dl)
 {
-	t_sub_lst	*cpy;
-	t_sub_lst	*lst_oper;
-	t_sub_lst	*cpy_lo;
-	int			ascending_order_size;
+	t_sub_lst	*cy;
+	t_sub_lst	*l_o;
+	t_sub_lst	*cy_lo;
+	int			ao_sz;
 	int			aot;
 
-	if (d->size_a >= 5)
-		ascending_order_size = 5;
-	else
-		ascending_order_size = d->size_a;
-	cpy = copy_sl;
-	lst_oper = NULL;
-	lst_oper = sl_new(0, NULL, 0);
-	if (!lst_oper)
+	part_two(d, &ao_sz, &cy, copy_sl);
+	l_o = NULL;
+	l_o = sl_new(0, NULL, 0);
+	if (!l_o)
 	{
 		clear_all(d);
 		exit (-1);
 	}
-	aot = ascending_order_tab(copy_sl->stack_after_oper, ascending_order_size);
+	aot = ascending_order_tab(copy_sl->stack_after_oper, ao_sz);
 	if (aot == -1 && (copy_sl->nb_rra == 0 || d->size_a <= 5))
 	{
-		if_sorted_two(d, cpy, lst_oper, dl);
-		cpy_lo = lst_oper;
-		if_sorted_three(d, cpy_lo);
-		sl_int_clear(&lst_oper);
+		is_two(d, cy, l_o, dl);
+		cy_lo = l_o;
+		if_sorted_three(d, cy_lo);
+		sl_int_clear(&l_o);
 		return (1);
 	}
-	sl_int_clear(&lst_oper);
+	sl_int_clear(&l_o);
 	return (0);
 }
 
-static void	if_sorted_two(t_data *d, t_sub_lst *cpy, t_sub_lst *lst_oper, t_double_lst **dl)
+static void	is_two(t_data *d, t_sub_lst *cy, t_sub_lst *l_o, t_double_lst **dl)
 {
-	while (cpy->prev_oper)
+	while (cy->prev_oper)
 	{
-		if (sl_add_back(&lst_oper, sl_new(cpy->oper_used, NULL, 0)))
+		if (sl_add_back(&l_o, sl_new(cy->oper_used, NULL, 0)))
 		{
 			dl_clear(dl);
-			sl_int_clear(&lst_oper);
+			sl_int_clear(&l_o);
 			clear_all(d);
 			exit (-1);
 		}
-		cpy = cpy->prev_oper;
+		cy = cy->prev_oper;
 	}
-	if (sl_add_back(&lst_oper, sl_new(cpy->oper_used, NULL, 0)))
+	if (sl_add_back(&l_o, sl_new(cy->oper_used, NULL, 0)))
 	{
 		dl_clear(dl);
-		sl_int_clear(&lst_oper);
+		sl_int_clear(&l_o);
 		clear_all(d);
 		exit (-1);
 	}
 }
 
-static void	if_sorted_three(t_data *d, t_sub_lst *cpy_lo)
+static void	if_sorted_three(t_data *d, t_sub_lst *cy_lo)
 {
-	while (cpy_lo->next)
-		cpy_lo = cpy_lo->next;
-	while (cpy_lo->prev)
+	while (cy_lo->next)
+		cy_lo = cy_lo->next;
+	while (cy_lo->prev)
 	{
-		if (cpy_lo->oper_used == 1)
+		if (cy_lo->oper_used == 1)
 			sa(d);
-		if (cpy_lo->oper_used == 2)
+		if (cy_lo->oper_used == 2)
 			ra(d);
-		if (cpy_lo->oper_used == 4)
+		if (cy_lo->oper_used == 4)
 			rra(d);
-		cpy_lo = cpy_lo->prev;
+		cy_lo = cy_lo->prev;
 	}
+}
+
+static void	part_two(t_data *d, int *ao_sz, t_sub_lst **cy, t_sub_lst *copy_sl)
+{
+	if (d->size_a >= 5)
+		*ao_sz = 5;
+	else
+		*ao_sz = d->size_a;
+	*cy = copy_sl;
 }

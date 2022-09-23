@@ -6,13 +6,14 @@
 /*   By: tda-silv <tda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:29:46 by tda-silv          #+#    #+#             */
-/*   Updated: 2022/09/16 18:35:18 by tda-silv         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:05:08 by tda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 static void	sort_all(t_data *d, t_index *index_lst);
+static int	part_two(t_data *d);
 
 int	main(int argc, char *argv[])
 {
@@ -30,16 +31,11 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	if (d.stock_size_a < 6)
-	{
-		sort_first_five_a(&d);
-		clear_all(&d);
-		return (0);
-	}
+		return (part_two(&d));
 	index_lst = index_stack(&d);
 	if (!index_lst)
 	{
 		clear_all(&d);
-		printf("ERRRO\n");
 		exit (-1);
 	}
 	sort_all(&d, index_lst);
@@ -68,4 +64,11 @@ static void	sort_all(t_data *d, t_index *index_lst)
 		while (d->size_b)
 			pa(d);
 	}
+}
+
+int	part_two(t_data *d)
+{
+	sort_first_five_a(d);
+	clear_all(d);
+	return (0);
 }
